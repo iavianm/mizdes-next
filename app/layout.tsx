@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import React from "react";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
