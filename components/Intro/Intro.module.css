@@ -1,0 +1,87 @@
+.intro__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  height: 80vh;
+  background: #000 url("/images/intro-img.jpg") no-repeat center;
+  background-size: 100% 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.intro__opacity {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.intro__content {
+  max-width: 1280px;
+  width: calc(100% - 2 * 70px);
+  margin: 0 auto;
+  color: white;
+  z-index: 2;
+}
+
+.intro__content h1 {
+  max-width: 900px;
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-size: 72px;
+  line-height: 68px;
+}
+
+.intro__content h3 {
+  max-width: 900px;
+  margin: 0;
+  padding: 0 0 40px 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.intro__content p {
+  max-width: 900px;
+  margin: 0;
+  padding: 0 0 140px 0;
+  font-size: 20px;
+  hyphens: auto;
+}
+
+.intro__content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 30px 0;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.intro__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.intro__button {
+  cursor: pointer;
+  background-color: var(--orange-color) !important;
+  text-transform: uppercase;
+  height: auto !important;
+  padding: 10px 30px !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  transition: transform 0.1s ease-in-out;
+}
+
+.intro__button:hover {
+  background-color: var(--orange-color-hover) !important;
+  transform: scale(1.01);
+}

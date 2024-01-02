@@ -3,6 +3,7 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import Header from "@/components/Header/Header";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: React.PropsWithChildren) => (
   <html lang="ru">
     <body className={roboto.className}>
+      <Header />
       <AntdRegistry>{children}</AntdRegistry>
     </body>
   </html>
