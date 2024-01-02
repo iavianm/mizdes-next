@@ -20,7 +20,7 @@ const Features = () => {
         <div className={styles.features__grid}>
           {featureItems.map((item) => {
             return (
-              <div className={styles.feature__item}>
+              <div className={styles.feature__item} key={item.id}>
                 <img src={item.src} alt={item.alt} />
                 <div className={styles.feature__info}>
                   <strong>{item.label}</strong>

@@ -1,0 +1,24 @@
+.villas__section {
+  margin: 0 auto 70px;
+  max-width: 1280px;
+  width: calc(100% - 2 * 70px);
+  text-align: center;
+}
+
+.villas__section h2 {
+  font-size: 46px;
+  color: #000;
+  margin: 20px 0;
+}
+
+.villas__section p {
+  color: #000;
+  margin: 20px 0 25px;
+  font-size: 20px;
+}
+
+.villas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}

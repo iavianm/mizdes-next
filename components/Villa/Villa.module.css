@@ -1,0 +1,106 @@
+.villa__card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  padding: 3px;
+}
+
+.villa__image {
+  position: relative;
+  height: 400px;
+}
+
+.villa__image img {
+  border-radius: 8px;
+}
+
+.villa__info {
+  padding: 16px;
+}
+
+.villa__about_container {
+  border-bottom: 2px solid black;
+}
+
+.villa__about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.villa__title {
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.villa__details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  gap: 30px;
+}
+
+.villa__description {
+  font-size: 1rem;
+  color: #000000;
+}
+
+.villa__nyprice {
+  padding: 0;
+  margin: 0 0 10px 0;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .title {
+    font-size: 1rem;
+  }
+  .description {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .details {
+    font-size: 0.8rem;
+    gap: 10px;
+  }
+
+  .card-price-new-year {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .details {
+    font-size: 0.7rem;
+  }
+
+  .card-price-new-year {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .details {
+    font-size: 0.9rem;
+  }
+
+  .card-price-new-year {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .details {
+    font-size: 0.6rem;
+  }
+
+  .card-price-new-year {
+    font-size: 0.6rem;
+  }
+}
