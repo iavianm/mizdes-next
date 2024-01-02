@@ -3,6 +3,7 @@ import Intro from "@/components/Intro/Intro";
 import introContent from "../content/introContent.json";
 import Features from "@/components/Features/Features";
 import Villas from "@/components/Villas/Villas";
+import TextBlock from "@/components/TextBlock/TextBlock";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Intro content={introContent.homePage} />
       <Features />
       <Villas />
+      <TextBlock />
     </main>
   );
 }

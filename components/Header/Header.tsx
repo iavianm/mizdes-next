@@ -2,13 +2,7 @@ import styles from "./Header.module.css";
 import Link from "next/link";
 import Navigation from "@/components/Navigation/Navigation";
 import { Button } from "antd";
-
-const navItems = [
-  { label: "Главная", href: "/" },
-  { label: "Номера", href: "/houses" },
-  { label: "В процессе", href: "/develop" },
-  { label: "Контакты", href: "/contacts" },
-];
+import { navItems } from "../../content/navItemsContent.json";
 
 function Header() {
   return (

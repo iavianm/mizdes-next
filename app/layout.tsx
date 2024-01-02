@@ -4,6 +4,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -21,6 +22,7 @@ const RootLayout = ({ children }: React.PropsWithChildren) => (
     <body className={roboto.className}>
       <Header />
       <AntdRegistry>{children}</AntdRegistry>
+      <Footer />
     </body>
   </html>
 );
