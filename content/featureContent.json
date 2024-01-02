@@ -1,0 +1,25 @@
+{
+  "featureItems": [
+    {
+      "id": 1,
+      "alt": "Клубный дом",
+      "src": "/images/25ga.jpg",
+      "label": "25 га",
+      "desc": "площадь клуба"
+    },
+    {
+      "id": 2,
+      "alt": "Вилла",
+      "src": "/images/riviera_new.jpeg",
+      "label": "6 вилл",
+      "desc": "премиум-класса"
+    },
+    {
+      "id": 3,
+      "alt": "Береговая линия",
+      "src": "/images/1km.jpeg",
+      "label": "1 км",
+      "desc": "береговой линии"
+    }
+  ]
+}
