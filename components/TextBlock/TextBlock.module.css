@@ -26,15 +26,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .text-block {
-    width: calc(100% - 2 * 40px);
+  .text__block {
     padding: 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .text-block {
-    width: calc(100% - 2 * 20px);
+  .text__block {
     padding: 10px;
   }
 }

@@ -56,10 +56,10 @@
 }
 
 @media screen and (max-width: 1000px) {
-  .title {
+  .villa__title {
     font-size: 1rem;
   }
-  .description {
+  .villa__description {
     font-size: 0.9rem !important;
   }
 }
@@ -70,37 +70,53 @@
     gap: 10px;
   }
 
-  .card-price-new-year {
+  .villa__nyprice {
     font-size: 0.8rem;
   }
 }
 
-@media screen and (max-width: 780px) {
-  .details {
+@media screen and (max-width: 792px) {
+  .villa__details {
     font-size: 0.7rem;
   }
 
-  .card-price-new-year {
+  .villa__nyprice {
     font-size: 0.7rem;
   }
 }
 
 @media screen and (max-width: 700px) {
-  .details {
+  .villa__details {
     font-size: 0.9rem;
+    gap: 20px;
   }
 
-  .card-price-new-year {
+  .villa__nyprice {
     font-size: 0.9rem;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .details {
-    font-size: 0.6rem;
+@media screen and (max-width: 450px) {
+  .villa__details {
+    font-size: 0.7rem;
+    gap: 15px;
   }
 
-  .card-price-new-year {
+  .villa__nyprice {
     font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .villa__details {
+    font-size: 0.7rem;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .villa__details {
+    font-size: 0.55rem;
+    gap: 5px;
   }
 }
