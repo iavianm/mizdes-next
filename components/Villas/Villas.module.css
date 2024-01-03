@@ -1,19 +1,19 @@
 .villas__section {
-  margin: 0 auto 70px;
+  margin: 50px auto 50px;
   max-width: 1280px;
-  width: calc(100% - 2 * 70px);
+  /*width: calc(100% - 2 * 70px);*/
   text-align: center;
 }
 
 .villas__section h2 {
   font-size: 46px;
   color: #000;
-  margin: 20px 0;
+  margin: 0;
 }
 
 .villas__section p {
   color: #000;
-  margin: 20px 0 25px;
+  margin: 20px 0;
   font-size: 20px;
 }
 

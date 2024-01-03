@@ -6,16 +6,18 @@ li {
 .header {
   display: flex;
   max-width: 1280px;
-  width: calc(100% - 2 * 70px);
   margin: 0 auto;
   height: 81px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .header__logo {
   width: 52px;
   height: 52px;
+  background: url("/images/header-logo.svg") no-repeat center;
+  background-size: contain;
+  margin-left: 10px;
 }
 
 .header__button {
@@ -31,49 +33,24 @@ li {
   transform: scale(1.01);
 }
 
-.header-burger__btn {
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-}
-
-.header-burger__img {
-  max-width: 70px;
-  max-height: 30px;
-}
-
-@media screen and (max-width: 900px) {
-  .header__list {
-    gap: 20px;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .header {
     justify-content: space-between;
     background-color: var(--blue-color-rgba);
-    width: 100%;
+    width: calc(100% - 20px);
     position: fixed;
     top: 0;
     z-index: 1000;
   }
 
-  .header__logo {
-    padding-left: 40px;
+  .header__button {
+    display: none !important;
   }
 
-  .header-burger__btn {
-    padding: 0 60px 0 0;
+  .header__logo {
+    background-image: url("/images/header-logo-white.svg");
   }
 }
 
 @media screen and (max-width: 480px) {
-  .header__logo {
-    padding-left: 20px;
-  }
-
-  .header-burger__btn {
-    padding: 0 20px 0 0;
-    /* width: ; */
-  }
 }

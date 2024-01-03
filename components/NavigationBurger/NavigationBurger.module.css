@@ -1,0 +1,86 @@
+.nav__menu {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  box-sizing: border-box;
+  padding: 80px 50px 80px !important;
+  background-color: var(--blue-color);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.1s,
+    opacity 0.5s linear,
+    transform 0.5s ease-in-out;
+  transform: translateX(100%);
+  z-index: 9999;
+}
+
+.nav__menu_visible {
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav__menu ul {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.nav__menu li {
+  font-weight: 700;
+  line-height: 22px;
+  font-size: 14px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav__menu_item {
+  text-decoration: none;
+  color: #e5e5e5;
+  display: inline-block;
+}
+
+.nav__menu_item:hover {
+  transform: scale(1.01);
+  transition: transform 0.1s ease-in-out;
+  color: var(--orange-color-active);
+}
+
+.active {
+  color: var(--orange-color);
+}
+
+.burger__description {
+  text-align: left;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.burger__number {
+  color: white;
+  margin: 0 0 15px 0;
+  display: block;
+}
+
+.burger__link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.burger__button {
+  cursor: pointer;
+  background-color: var(--orange-color) !important;
+  text-transform: uppercase;
+  color: #fff;
+  transition: transform 0.1s ease-in-out;
+}
