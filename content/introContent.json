@@ -20,9 +20,9 @@
       "Первая береговая линия Финского залива с собственным пляжем",
       "Стиль, индивидуальность, харизма"
     ],
-    "buttonText": "Забронировать",
+    "buttonLabel": "Забронировать",
     "buttonLink": "#",
-    "featureIconSrc": "/images/teenyicons_tick-circ.svg"
+    "featureIconSrc": "/images/teeny-icons-tick-circ.svg"
   },
   "spaPage": {
     "title": "",
@@ -33,11 +33,11 @@
       "Первая береговая линия Финского залива с собственным пляжем",
       "Множество оздоровительных и расслабляющих процедур"
     ],
-    "buttonText": "Забронировать",
+    "buttonLabel": "Забронировать",
     "buttonLink": "#",
-    "featureIconSrc": "/images/teenyicons_tick-circ.svg"
+    "featureIconSrc": "/images/teeny-icons-tick-circ.svg"
   },
-  "restauranPage": {
+  "restaurantPage": {
     "title": "",
     "subtitle": "Панорамный ресторан мечты на берегу Финского залива",
     "description": "Кухня, богатая разнообразием блюд, уникальная архитектура ресторанного комплекса подарит каждому гостю эстетическое и гастрономическое удовольствие",
@@ -46,9 +46,9 @@
       "Первая береговая линия Финского залива с собственным пляжем",
       "В окружении соснового леса"
     ],
-    "buttonText": "Забронировать",
+    "buttonLabel": "Забронировать",
     "buttonLink": "#",
-    "featureIconSrc": "/images/teenyicons_tick-circ.svg"
+    "featureIconSrc": "/images/teeny-icons-tick-circ.svg"
   },
   "developPage": {
     "title": "В процессе строительства",
@@ -59,8 +59,8 @@
       "Множество оздоровительных и расслабляющих процедур",
       "Ресторан в окружении соснового леса"
     ],
-    "buttonText": "Главная",
+    "buttonLabel": "Главная",
     "buttonLink": "/",
-    "featureIconSrc": "/images/teenyicons_tick-circ.svg"
+    "featureIconSrc": "/images/teeny-icons-tick-circ.svg"
   }
 }

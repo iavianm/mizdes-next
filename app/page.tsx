@@ -5,7 +5,7 @@ import Features from "@/components/Features/Features";
 import Villas from "@/components/Villas/Villas";
 import TextBlock from "@/components/TextBlock/TextBlock";
 
-export default function Home() {
+const Home = () => {
   return (
     <main className={styles.main}>
       <Intro content={introContent.homePage} />
@@ -14,4 +14,6 @@ export default function Home() {
       <TextBlock />
     </main>
   );
-}
+};
+
+export default Home;

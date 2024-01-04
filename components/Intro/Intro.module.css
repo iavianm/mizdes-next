@@ -7,6 +7,7 @@
   background-size: 100% 100%;
   position: relative;
   z-index: 1;
+  border-radius: 10px;
 }
 
 .intro__opacity {
@@ -17,6 +18,7 @@
   right: 0;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
 }
 
 .intro__content {
@@ -126,6 +128,7 @@
 
   .intro__section {
     padding: 30px;
+    margin-top: 20px;
   }
 }
 
@@ -149,5 +152,17 @@
 
   .intro__feature {
     font-size: 12px;
+  }
+
+  .intro__button {
+    padding: 10px 30px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .intro__button {
+    margin: 0 auto !important;
+    display: block !important;
   }
 }

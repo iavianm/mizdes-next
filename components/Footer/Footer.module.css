@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   min-height: 300px;
   position: relative;
+  border-radius: 10px 10px 0 0;
 }
 
 .footer__content {
@@ -89,6 +90,8 @@
 
 .footer__contact a:hover {
   text-decoration: underline;
+  transform: scale(1.01);
+  transition: transform 0.1s ease-in-out;
 }
 
 .footer__about {

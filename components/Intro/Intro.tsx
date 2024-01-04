@@ -42,13 +42,13 @@ const Intro = ({ content }: Props) => {
             </li>
           ))}
         </ul>
-        <Button
-          type="primary"
-          href={buttonLink}
-          className={styles.intro__button}
-        >
-          {buttonLabel}
-        </Button>
+        {/*<Button*/}
+        {/*  type="primary"*/}
+        {/*  href={buttonLink}*/}
+        {/*  className={styles.intro__button}*/}
+        {/*>*/}
+        {/*  {buttonLabel}*/}
+        {/*</Button>*/}
       </div>
     </section>
   );
