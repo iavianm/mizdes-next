@@ -5,7 +5,7 @@ const Leisure = () => {
   return (
     <section className={styles.leisure__section}>
       <h2>Активный отдых</h2>
-      <h3>«Мы здесь» — это не только вдохновляющая история релакса</h3>
+      <h3>«МЫ ЗДЕСЬ» — это не только вдохновляющая история релакса</h3>
       <div className={styles.leisure__feature_list}>
         {features.map((feature, index) => (
           <div key={index} className={styles.leisure__feature}>

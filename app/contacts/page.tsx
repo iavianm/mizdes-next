@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import About from "@/components/Contacts/About";
+import About from "@/components/About/About";
 
 const Contacts = () => {
   return (

@@ -1,10 +1,6 @@
-"use client";
 import styles from "./House.module.css";
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-import { useState } from "react";
 import { Button } from "antd";
+import HouseGallery from "@/components/ HouseGallery/HouseGallery";
 
 interface Image {
   imageSrc: string;
@@ -79,11 +75,9 @@ const House = ({ content }: Props) => {
                 Забронировать
               </Button>
             </div>
-            <img
-              className={styles.house__description_image}
-              src={image.imageSrc}
-              alt={image.alt}
-            />
+            <div className={styles.house__description_image}>
+              <HouseGallery content={sliderImage} />
+            </div>
           </div>
         </div>
       </div>

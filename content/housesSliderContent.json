@@ -1,6 +1,11 @@
 {
   "riviera": [
     {
+      "id": 0,
+      "src": "/images/riviera_slider/riviera_slider_0.jpeg",
+      "alt": "Image 0"
+    },
+    {
       "id": 1,
       "src": "/images/riviera_slider/riviera_slider_1.jpg",
       "alt": "Image 1"
@@ -112,6 +117,11 @@
     }
   ],
   "grandis": [
+    {
+      "id": 0,
+      "src": "/images/grandis_slider/grandis_slider_0.jpeg",
+      "alt": "Image 0"
+    },
     {
       "id": 2,
       "src": "/images/grandis_slider/grandis_slider_1.jpg",
