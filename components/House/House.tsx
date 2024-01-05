@@ -37,7 +37,7 @@ const House = ({ content }: Props) => {
   const { specs, title, description, tags, about, image } = house;
 
   return (
-    <section className={styles.house__section}>
+    <section className={styles.house__section} id={title}>
       <div className={styles.house__container}>
         <div className={styles.house__info}>
           <div className={styles.house__about}>

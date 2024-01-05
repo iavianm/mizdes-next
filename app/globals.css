@@ -6,6 +6,10 @@
   --orange-color-active: #cf8b25;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   position: relative;
