@@ -77,10 +77,10 @@
   font-size: 13px;
 }
 
-.burger__button {
-  cursor: pointer;
-  background-color: var(--orange-color) !important;
-  text-transform: uppercase;
-  color: #fff;
-  transition: transform 0.1s ease-in-out;
-}
+/*.burger__button {*/
+/*  cursor: pointer;*/
+/*  background-color: var(--orange-color) !important;*/
+/*  text-transform: uppercase;*/
+/*  color: #fff;*/
+/*  transition: transform 0.1s ease-in-out;*/
+/*}*/

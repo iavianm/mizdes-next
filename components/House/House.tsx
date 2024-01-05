@@ -1,6 +1,6 @@
 import styles from "./House.module.css";
-import { Button } from "antd";
 import HouseGallery from "@/components/ HouseGallery/HouseGallery";
+import OrderButton from "@/components/OrderButton/OrderButton";
 
 interface Image {
   imageSrc: string;
@@ -67,13 +67,7 @@ const House = ({ content }: Props) => {
                   </p>
                 ))}
               </div>
-              <Button
-                type="primary"
-                // href={}
-                className={styles.house__button}
-              >
-                Забронировать
-              </Button>
+              <OrderButton />
             </div>
             <div className={styles.house__description_image}>
               <HouseGallery content={sliderImage} />

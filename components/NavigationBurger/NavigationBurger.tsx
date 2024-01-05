@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./NavigationBurger.module.css";
 import { Button } from "antd";
+import OrderButton from "@/components/OrderButton/OrderButton";
 
 type NavLink = {
   label: string;
@@ -54,10 +55,7 @@ const NavigationBurger = ({ navLinks, closeMenu, visible }: Props) => {
             mizdesclub@yandex.ru
           </a>
         </div>
-
-        <Button type="primary" className={styles.burger__button}>
-          Забронировать
-        </Button>
+        <OrderButton buttonClass={"burger__button"} />
       </div>
     </div>
   );
