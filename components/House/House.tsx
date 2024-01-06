@@ -1,5 +1,5 @@
 import styles from "./House.module.css";
-import HouseGallery from "@/components/ HouseGallery/HouseGallery";
+import HouseGallery from "@/components/HouseGallery/HouseGallery";
 import OrderButton from "@/components/OrderButton/OrderButton";
 
 interface Image {

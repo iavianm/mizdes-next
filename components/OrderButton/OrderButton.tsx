@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "antd";
 import styles from "./OrderButton.module.css";
-import BookingPopup from "@/components/BookingPopup/BookingPopup";
+import BookingForm from "@/components/BookingForm/BookingForm";
 
 type OrderButtonProps = {
   buttonClass?: string;
@@ -10,17 +10,25 @@ type OrderButtonProps = {
 
 const OrderButton = ({ buttonClass }: OrderButtonProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formKey, setFormKey] = useState(0);
 
   const showModal = () => {
     setIsModalOpen(true);
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setFormKey((prevKey) => prevKey + 1);
+  };
+
   const handleOk = () => {
     setIsModalOpen(false);
+    setFormKey((prevKey) => prevKey + 1);
   };
 
   const handleCancel = () => {
     setIsModalOpen(false);
+    setFormKey((prevKey) => prevKey + 1);
   };
 
   return (
@@ -37,9 +45,9 @@ const OrderButton = ({ buttonClass }: OrderButtonProps) => {
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
+        footer={null}
       >
-        <p>Содержимое модального окна...</p>
-        <BookingPopup />
+        <BookingForm key={formKey} onSuccess={closeModal} />
       </Modal>
     </>
   );
