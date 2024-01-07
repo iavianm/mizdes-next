@@ -5,6 +5,7 @@ import "./globals.css";
 import React from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { Providers } from "@/components/Providers/Providers";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -17,12 +18,14 @@ export const metadata: Metadata = {
     "Наслаждайтесь незабываемым отдыхом в базе отдыха 'Мы Здесь' в живописной Ленинградской области. Идеальное место для семейного отдыха и отдыха на природе.",
 };
 
-const RootLayout = ({ children }: React.PropsWithChildren) => (
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="ru">
     <body className={roboto.className}>
-      <Header />
-      <AntdRegistry>{children}</AntdRegistry>
-      <Footer />
+      <Providers>
+        <Header />
+        <AntdRegistry>{children}</AntdRegistry>
+        <Footer />
+      </Providers>
     </body>
   </html>
 );

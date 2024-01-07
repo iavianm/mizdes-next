@@ -15,7 +15,7 @@ import {
   FormRowName,
 } from "./StyledComponents";
 import NumberInput from "./NumberInput";
-import { createBooking, getLatestBookings } from "@/api/api";
+import { createBooking, getLatestBookings } from "@/app/api/api";
 import { BookingSchema, today } from "@/components/BookingForm/BookingSchema";
 import { options } from "../../content/additionalOptionsContent.json";
 
