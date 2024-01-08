@@ -1,5 +1,6 @@
 import styles from "./Features.module.css";
 import { featureItems } from "../../content/featureContent.json";
+import HouseGallery from "@/components/HouseGallery/HouseGallery";
 
 const Features = () => {
   return (
@@ -21,7 +22,11 @@ const Features = () => {
           {featureItems.map((item) => {
             return (
               <div className={styles.feature__item} key={item.id}>
-                <img src={item.src} alt={item.alt} />
+                {/*<img src={item.src} alt={item.alt} />*/}
+                <div className={styles.feature__item_img}>
+                  <HouseGallery content={item.src} />
+                </div>
+
                 <div className={styles.feature__info}>
                   <strong>{item.label}</strong>
                   <span>{item.desc}</span>
