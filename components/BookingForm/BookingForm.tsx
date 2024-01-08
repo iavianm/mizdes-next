@@ -56,7 +56,7 @@ interface TotalCottages {
 }
 
 interface Booking {
-  id: number;
+  id: string;
   cottage: string;
   arrivalDate: string;
   departureDate: string;

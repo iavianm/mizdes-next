@@ -6,9 +6,22 @@ import BookingForm from "../BookingForm/BookingForm";
 import { getBookings, removeBooking } from "@/app/api/api";
 import { useSession } from "next-auth/react";
 
+interface Booking {
+  _id: string;
+  name: string;
+  phone: string;
+  email: string;
+  cottage: string;
+  additional: string[];
+  arrivalDate: string;
+  departureDate: string;
+  adults: number;
+  kids: number;
+}
+
 const AdminComponent = () => {
-  const [bookedDates, setBookedDates] = useState([]);
-  const [selectedBooking, setSelectedBooking] = useState(null);
+  const [bookedDates, setBookedDates] = useState<Booking[]>([]);
+  const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
   const [isViewModalVisible, setIsViewModalVisible] = useState(false);
   const [isDeleteModalVisible, setIsDeleteModalVisible] = useState(false);
@@ -23,17 +36,17 @@ const AdminComponent = () => {
     Bookings();
   }, []);
 
-  const handleView = (booking) => {
+  const handleView = (booking: Booking) => {
     setSelectedBooking(booking);
     setIsViewModalVisible(true);
   };
 
-  const handleEdit = (booking) => {
+  const handleEdit = (booking: Booking) => {
     setSelectedBooking(booking);
     setIsEditModalVisible(true);
   };
 
-  const handleConfirmDelete = (booking) => {
+  const handleConfirmDelete = (booking: Booking) => {
     if (booking) {
       setSelectedBooking(booking);
       setIsDeleteModalVisible(true);
@@ -41,14 +54,16 @@ const AdminComponent = () => {
   };
 
   const handleDelete = () => {
-    removeBooking(selectedBooking._id)
-      .then(() => {
-        setBookedDates((state) =>
-          state.filter((el) => el._id !== selectedBooking._id),
-        );
-        setIsDeleteModalVisible(false);
-      })
-      .catch((e) => console.log(e));
+    if (selectedBooking) {
+      removeBooking(selectedBooking._id)
+        .then(() => {
+          setBookedDates((state) =>
+            state.filter((el) => el._id !== selectedBooking._id),
+          );
+          setIsDeleteModalVisible(false);
+        })
+        .catch((e) => console.log(e));
+    }
   };
 
   const columns = [
@@ -76,7 +91,7 @@ const AdminComponent = () => {
       title: "Доп.услуги",
       dataIndex: "additional",
       key: "additional",
-      render: (additional) => (
+      render: (additional: string[]) => (
         <>
           {additional.map((item, index) => (
             <div key={index}>{item}</div>
@@ -107,7 +122,7 @@ const AdminComponent = () => {
     {
       title: "Действия",
       key: "actions",
-      render: (_, booking) => (
+      render: (_: unknown, booking: Booking) => (
         <div className={styles.admin__button_container}>
           <Button
             key={`view-${booking._id}`}
