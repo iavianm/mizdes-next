@@ -12,19 +12,19 @@ export const authConfig: AuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials.password) return null;
 
-        try {
-          const res = await login({
-            email: credentials.email,
-            password: credentials.password,
-          });
-          if (res !== false) {
-            const { password, ...userWithoutPass } = res.user;
-
-            return userWithoutPass as User;
-          }
-        } catch (e: any) {
-          console.log(e.status);
-        }
+        // try {
+        //   const res = await login({
+        //     email: credentials.email,
+        //     password: credentials.password,
+        //   });
+        //   if (res !== false) {
+        //     const { password, ...userWithoutPass } = res.user;
+        //
+        //     return userWithoutPass as User;
+        //   }
+        // } catch (e: any) {
+        //   console.log(e.status);
+        // }
 
         return null;
       },
