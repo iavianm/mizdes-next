@@ -107,7 +107,6 @@
   flex: 1;
   object-fit: cover;
   cursor: pointer;
-  aspect-ratio: 2/1;
   border-radius: 8px;
   width: 36vw;
 }
@@ -120,13 +119,6 @@
   background-color: var(--orange-color-hover) !important;
   transform: scale(1.01);
 }
-
-/*@media screen and (max-width: 1200px) {*/
-/*  .house__info {*/
-/*    width: 80%;*/
-/*    margin-bottom: 50px;*/
-/*  }*/
-/*}*/
 
 @media screen and (max-width: 1120px) {
   .house__section {

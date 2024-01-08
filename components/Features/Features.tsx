@@ -22,7 +22,6 @@ const Features = () => {
           {featureItems.map((item) => {
             return (
               <div className={styles.feature__item} key={item.id}>
-                {/*<img src={item.src} alt={item.alt} />*/}
                 <div className={styles.feature__item_img}>
                   <HouseGallery content={item.src} />
                 </div>
