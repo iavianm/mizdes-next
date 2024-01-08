@@ -93,10 +93,16 @@ const checkAvailability = (
 };
 
 const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
-  console.log(initialBooking);
-
   const capitalize = require("capitalize");
   const [bookedDates, setBookedDates] = useState([]);
+  const [availableCottages, setAvailableCottages] = useState<string[]>([]);
+  const [arrivalDateValue, setArrivalDateValue] = useState<string>("");
+  const [departureDateValue, setDepartureDateValue] = useState<string>("");
+
+  const totalCottages = {
+    riviera: 3,
+    grandis: 2,
+  };
 
   useEffect(() => {
     getLatestBookings().then((res) => {
@@ -104,7 +110,20 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
     });
   }, []);
 
-  const [availableCottages, setAvailableCottages] = useState<string[]>([]);
+  useEffect(() => {
+    const newAvailableCottages = Object.keys(totalCottages).filter(
+      (cottageType) =>
+        checkAvailability(
+          cottageType,
+          arrivalDateValue,
+          departureDateValue,
+          bookedDates,
+          totalCottages,
+        ),
+    );
+
+    setAvailableCottages(newAvailableCottages);
+  }, [arrivalDateValue, departureDateValue, bookedDates]);
 
   return (
     <Formik
@@ -139,26 +158,6 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
         const { values, setFieldValue, isSubmitting, isValid, dirty } =
           formikProps;
 
-        const totalCottages = {
-          riviera: 3,
-          grandis: 2,
-        };
-
-        useEffect(() => {
-          const newAvailableCottages = Object.keys(totalCottages).filter(
-            (cottageType) =>
-              checkAvailability(
-                cottageType,
-                values.arrivalDate,
-                values.departureDate,
-                bookedDates,
-                totalCottages,
-              ),
-          );
-
-          setAvailableCottages(newAvailableCottages);
-        }, [values.arrivalDate, values.departureDate, bookedDates]);
-
         return (
           <StyledForm onSubmit={formikProps.handleSubmit}>
             <FormRow>
@@ -169,6 +168,7 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
                   name="arrivalDate"
                   min={today}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
+                    setArrivalDateValue(e.target.value);
                     setFieldValue("arrivalDate", e.target.value);
 
                     if (e.target.value >= values.departureDate) {
@@ -176,6 +176,9 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
                       newDepartureDate.setDate(newDepartureDate.getDate() + 1);
                       setFieldValue(
                         "departureDate",
+                        newDepartureDate.toISOString().split("T")[0],
+                      );
+                      setDepartureDateValue(
                         newDepartureDate.toISOString().split("T")[0],
                       );
                     }
@@ -195,6 +198,9 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
                       ? new Date(values.arrivalDate).toISOString().split("T")[0]
                       : today
                   }
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
+                    setDepartureDateValue(e.target.value);
+                  }}
                 />
                 <ErrorMessageContainer>
                   <ErrorMessage name="departureDate" component={ErrorText} />
