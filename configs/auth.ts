@@ -17,6 +17,8 @@ export const authConfig: AuthOptions = {
             email: credentials.email,
             password: credentials.password,
           });
+
+          console.log(res);
           if (res !== false) {
             const { password, ...userWithoutPass } = res.user;
 
