@@ -16,6 +16,7 @@ function Header() {
       <Link href="/" className={styles.header__logo} />
       <Navigation navLinks={navItems} />
       <div className={styles.header__button_container}>
+        <OrderButton />
         <div className={styles.header__button_admin}>
           {session?.data && (
             <Link href="/admin">
@@ -28,7 +29,6 @@ function Header() {
             </Link>
           )}
         </div>
-        <OrderButton />
       </div>
       <BurgerMenu />
     </header>

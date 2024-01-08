@@ -50,10 +50,6 @@
     border-radius: 0 0 10px 10px;
   }
 
-  .header__button {
-    display: none !important;
-  }
-
   .header__logo {
     background-image: url("/images/header-logo-white.svg");
   }
