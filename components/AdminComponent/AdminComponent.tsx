@@ -19,6 +19,19 @@ interface Booking {
   wishes: string;
 }
 
+interface Booking {
+  _id: string;
+  name: string;
+  phone: string;
+  email: string;
+  cottage: string;
+  additional: string[];
+  arrivalDate: string;
+  departureDate: string;
+  adults: number;
+  kids: number;
+}
+
 const AdminComponent = () => {
   const [bookedDates, setBookedDates] = useState<Booking[]>([]);
   const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
