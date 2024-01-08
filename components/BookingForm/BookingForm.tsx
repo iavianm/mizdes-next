@@ -15,17 +15,20 @@ import {
   FormRowName,
 } from "./StyledComponents";
 import NumberInput from "./NumberInput";
-import { createBooking, getLatestBookings } from "@/app/api/api";
+import { createBooking, getLatestBookings, updateBooking } from "@/app/api/api";
 import { BookingSchema, today } from "@/components/BookingForm/BookingSchema";
 import { options } from "../../content/additionalOptionsContent.json";
+import { Select } from "antd";
+
+const { Option } = Select;
 
 interface FormValues {
   arrivalDate: string;
   departureDate: string;
   cottage: string;
-  additional: string;
+  additional: Array<string>;
   adults: number;
-  children: number;
+  kids: number;
   name: string;
   phone: string;
   email: string;
@@ -33,15 +36,16 @@ interface FormValues {
 
 interface Props {
   onSuccess: () => void;
+  initialBooking?: Booking;
 }
 
 const initialValues: FormValues = {
   arrivalDate: "",
   departureDate: "",
   cottage: "",
-  additional: "",
+  additional: [],
   adults: 1,
-  children: 0,
+  kids: 0,
   name: "",
   phone: "",
   email: "",
@@ -52,12 +56,13 @@ interface TotalCottages {
 }
 
 interface Booking {
+  id: number;
   cottage: string;
   arrivalDate: string;
   departureDate: string;
   name: string;
   adults: number;
-  children: number;
+  kids: number;
   phone: string;
   email: string;
   additional: Array<string>;
@@ -87,7 +92,9 @@ const checkAvailability = (
   return countBookings < totalCottages[cottage];
 };
 
-const BookingForm: React.FC<Props> = ({ onSuccess }) => {
+const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
+  console.log(initialBooking);
+
   const capitalize = require("capitalize");
   const [bookedDates, setBookedDates] = useState([]);
 
@@ -101,19 +108,31 @@ const BookingForm: React.FC<Props> = ({ onSuccess }) => {
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={initialBooking || initialValues}
       validationSchema={BookingSchema}
       onSubmit={(values, actions) => {
-        console.log(values);
-        createBooking(values)
-          .then((r) => {
-            actions.setSubmitting(false);
-            onSuccess();
-          })
-          .catch((e) => {
-            console.log(e);
-            actions.setSubmitting(false);
-          });
+        if (initialBooking) {
+          console.log(initialBooking);
+          updateBooking(initialBooking.id, values)
+            .then(() => {
+              actions.setSubmitting(false);
+              onSuccess();
+            })
+            .catch((e) => {
+              console.log(e);
+              actions.setSubmitting(false);
+            });
+        } else {
+          createBooking(values)
+            .then(() => {
+              actions.setSubmitting(false);
+              onSuccess();
+            })
+            .catch((e) => {
+              console.log(e);
+              actions.setSubmitting(false);
+            });
+        }
       }}
     >
       {(formikProps) => {
@@ -202,19 +221,66 @@ const BookingForm: React.FC<Props> = ({ onSuccess }) => {
               </ErrorMessageContainer>
             </FieldContainer>
 
+            {/*<FieldContainer>*/}
+            {/*  <label htmlFor="additional">Дополнительные опции</label>*/}
+            {/*  <Field*/}
+            {/*    as="select"*/}
+            {/*    multiple*/}
+            {/*    name="additional"*/}
+            {/*    className={styles.selectStyle}*/}
+            {/*  >*/}
+            {/*    <option value="">Выбрать...</option>*/}
+            {/*    {options.map((option) => (*/}
+            {/*      <option key={option} value={capitalize(option)}>*/}
+            {/*        {capitalize(option)}*/}
+            {/*      </option>*/}
+            {/*    ))}*/}
+            {/*  </Field>*/}
+            {/*  <ErrorMessageContainer>*/}
+            {/*    <ErrorMessage name="additional" component={ErrorText} />*/}
+            {/*  </ErrorMessageContainer>*/}
+            {/*</FieldContainer>*/}
+
+            {/*<FieldContainer>*/}
+            {/*  <label htmlFor="additional">Дополнительные опции</label>*/}
+            {/*  {options.map((option) => (*/}
+            {/*    <div key={option} className={styles.checkboxContainer}>*/}
+            {/*      <Field*/}
+            {/*        type="checkbox"*/}
+            {/*        id={`additional-${option}`}*/}
+            {/*        name="additional"*/}
+            {/*        value={capitalize(option)}*/}
+            {/*        className={styles.checkboxStyle}*/}
+            {/*      />*/}
+            {/*      <label htmlFor={`additional-${option}`}>*/}
+            {/*        {capitalize(option)}*/}
+            {/*      </label>*/}
+            {/*    </div>*/}
+            {/*  ))}*/}
+            {/*</FieldContainer>*/}
+
             <FieldContainer>
               <label htmlFor="additional">Дополнительные опции</label>
-              <Field
-                as="select"
-                name="additional"
-                className={styles.selectStyle}
-              >
-                <option value="">Выбрать...</option>
-                {options.map((option) => (
-                  <option key={option} value={capitalize(option)}>
-                    {capitalize(option)}
-                  </option>
-                ))}
+              <Field name="additional">
+                {({ field, form }: { field: { value: any }; form: any }) => (
+                  <Select
+                    mode="multiple"
+                    allowClear
+                    placeholder="Выбрать..."
+                    onChange={(value) =>
+                      form.setFieldValue("additional", value)
+                    }
+                    value={field.value}
+                    className={styles.selectStyle}
+                    bordered={false}
+                  >
+                    {options.map((option) => (
+                      <Option key={option} value={capitalize(option)}>
+                        {capitalize(option)}
+                      </Option>
+                    ))}
+                  </Select>
+                )}
               </Field>
               <ErrorMessageContainer>
                 <ErrorMessage name="additional" component={ErrorText} />
@@ -225,7 +291,7 @@ const BookingForm: React.FC<Props> = ({ onSuccess }) => {
               <FormRowNumber>
                 <NumberInput label="Взрослые" name="adults" />
 
-                <NumberInput label="Дети" name="children" />
+                <NumberInput label="Дети" name="kids" />
               </FormRowNumber>
             </NumberContainer>
 
@@ -267,7 +333,9 @@ const BookingForm: React.FC<Props> = ({ onSuccess }) => {
               type="submit"
               disabled={!isValid || !dirty || isSubmitting}
             >
-              Создать бронирование
+              {initialBooking
+                ? "Обновить бронирование"
+                : "Создать бронирование"}
             </StyledButton>
           </StyledForm>
         );

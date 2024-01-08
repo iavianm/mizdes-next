@@ -1,5 +1,5 @@
-export const BASE_URL = "http://localhost:3005/api";
-// export const BASE_URL = "https://www.mizdes.com/api";
+// export const BASE_URL = "http://localhost:3005/api";
+export const BASE_URL = "https://www.mizdes.com/api";
 
 function getResponse(res) {
   if (!res.ok) {
@@ -90,7 +90,7 @@ export function updateBooking(bookingId, booking) {
       arrivalDate: booking.arrivalDate,
       departureDate: booking.departureDate,
       adults: booking.adults || 1,
-      children: booking.children || 0,
+      kids: booking.kids || 0,
       phone: booking.phone,
       email: booking.email || "",
       additional: booking.additional || [],
@@ -112,7 +112,7 @@ export function createBooking(booking) {
       arrivalDate: booking.arrivalDate,
       departureDate: booking.departureDate,
       adults: booking.adults || 1,
-      children: booking.children || 0,
+      kids: booking.kids || 0,
       phone: booking.phone,
       email: booking.email || "",
       additional: booking.additional || [],

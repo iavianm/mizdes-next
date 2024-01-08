@@ -10,6 +10,7 @@ import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 
 function Header() {
   const session = useSession();
+
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.header__logo} />
