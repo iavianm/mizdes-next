@@ -7,22 +7,54 @@ import BurgerMenu from "@/components/BurgerMenu/BurgerMenu";
 import OrderButton from "@/components/OrderButton/OrderButton";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
-import { loginWithCookie } from "@/app/api/api";
+import { loginWithCookie, logout } from "@/app/api/api";
+import { useRouter } from "next/navigation";
+import Preloader from "@/components/Preloader/Preloader";
+import { useAdminState } from "@/context/AdminStateContext";
 
 function Header() {
+  const router = useRouter();
   const [isAdmin, setIsAdmin] = useState(false);
+  const [usePreloader, setUsePreloader] = useState(false);
+  const { adminState } = useAdminState();
 
   useEffect(() => {
-    loginWithCookie()
-      .then((user) => {
-        if (user && typeof user === "object") {
-          setIsAdmin(true);
+    setUsePreloader(true);
+    if (adminState) {
+      setIsAdmin(true);
+      setUsePreloader(false);
+    } else {
+      loginWithCookie()
+        .then((user) => {
+          if (user && typeof user === "object") {
+            setIsAdmin(true);
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        })
+        .finally(() => {
+          setUsePreloader(false);
+        });
+    }
+  }, [adminState]);
+
+  function handleLogout() {
+    setUsePreloader(true);
+    logout()
+      .then((res) => {
+        if (res !== false) {
+          setIsAdmin(false);
+          router.push("/");
         }
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((error) => {
+        console.log(error.status);
+      })
+      .finally(() => {
+        setUsePreloader(false);
       });
-  }, []);
+  }
 
   return (
     <header className={styles.header}>
@@ -37,13 +69,14 @@ function Header() {
             </Link>
           )}
           {isAdmin && (
-            <Link href={"#"}>
+            <Link href={"/"} onClick={handleLogout}>
               <LogoutOutlined style={{ color: "#d38c20", fontSize: "24px" }} />
             </Link>
           )}
         </div>
       </div>
       <BurgerMenu />
+      <Preloader openPreloader={usePreloader} />
     </header>
   );
 }
