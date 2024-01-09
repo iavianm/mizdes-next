@@ -6,6 +6,7 @@ import React from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { AdminStateProvider } from "@/context/AdminStateContext";
+import YandexMetrika from "@/components/YandexMetrika/YandexMetrika";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -23,6 +24,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
     <body className={roboto.className}>
       <AdminStateProvider>
         <Header />
+        <YandexMetrika />
         <AntdRegistry>{children}</AntdRegistry>
         <Footer />
       </AdminStateProvider>
