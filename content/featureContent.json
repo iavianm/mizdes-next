@@ -1,0 +1,106 @@
+{
+  "featureItems": [
+    {
+      "id": 1,
+      "alt": "Клубный дом",
+      "src": [
+        {
+          "id": 1,
+          "src": "/images/features_slider/features_slider_1.jpg",
+          "alt": "Image 1"
+        },
+        {
+          "id": 2,
+          "src": "/images/features_slider/features_slider_2.jpg",
+          "alt": "Image 3"
+        },
+        {
+          "id": 3,
+          "src": "/images/features_slider/features_slider_3.jpg",
+          "alt": "Image 3"
+        }
+      ],
+      "label": "25 га",
+      "desc": "территория"
+    },
+    {
+      "id": 3,
+      "alt": "Береговая линия",
+      "src": [
+        {
+          "id": 1,
+          "src": "/images/1km.jpeg",
+          "alt": "Image 1"
+        },
+        {
+          "id": 4,
+          "src": "/images/features_slider/features_slider_4.jpg",
+          "alt": "Image 4"
+        }
+      ],
+      "label": "1 км",
+      "desc": "береговой линии"
+    },
+    {
+      "id": 2,
+      "alt": "Вилла",
+      "src": [
+        {
+          "id": 5,
+          "src": "/images/features_slider/features_slider_5.jpg",
+          "alt": "Image 5"
+        },
+        {
+          "id": 6,
+          "src": "/images/features_slider/features_slider_6.jpg",
+          "alt": "Image 6"
+        },
+        {
+          "id": 7,
+          "src": "/images/features_slider/features_slider_7.jpg",
+          "alt": "Image 7"
+        },
+        {
+          "id": 8,
+          "src": "/images/features_slider/features_slider_8.jpg",
+          "alt": "Image 8"
+        }
+      ],
+      "label": "6 вилл",
+      "desc": "премиум-класса"
+    },
+    {
+      "id": 4,
+      "alt": "Ресепшен",
+      "src": [
+        {
+          "id": 9,
+          "src": "/images/features_slider/features_slider_9.jpg",
+          "alt": "Image 9"
+        },
+        {
+          "id": 10,
+          "src": "/images/features_slider/features_slider_10.jpg",
+          "alt": "Image 10"
+        },
+        {
+          "id": 11,
+          "src": "/images/features_slider/features_slider_11.jpg",
+          "alt": "Image 11"
+        },
+        {
+          "id": 12,
+          "src": "/images/features_slider/features_slider_12.jpg",
+          "alt": "Image 12"
+        },
+        {
+          "id": 13,
+          "src": "/images/features_slider/features_slider_13.jpg",
+          "alt": "Image 13"
+        }
+      ],
+      "label": "Где начинается отдых",
+      "desc": "начало для вашего путешествия"
+    }
+  ]
+}

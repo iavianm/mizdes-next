@@ -3,6 +3,9 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import Header from "@/components/Header/Header";
+import Footer from "@/components/Footer/Footer";
+import { AdminStateProvider } from "@/context/AdminStateContext";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -15,10 +18,14 @@ export const metadata: Metadata = {
     "Наслаждайтесь незабываемым отдыхом в базе отдыха 'Мы Здесь' в живописной Ленинградской области. Идеальное место для семейного отдыха и отдыха на природе.",
 };
 
-const RootLayout = ({ children }: React.PropsWithChildren) => (
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="ru">
     <body className={roboto.className}>
-      <AntdRegistry>{children}</AntdRegistry>
+      <AdminStateProvider>
+        <Header />
+        <AntdRegistry>{children}</AntdRegistry>
+        <Footer />
+      </AdminStateProvider>
     </body>
   </html>
 );

@@ -1,0 +1,136 @@
+{
+  "riviera": [
+    {
+      "id": 1,
+      "src": "/images/riviera_slider/riviera_slider_1.jpg",
+      "alt": "Image 1"
+    },
+    {
+      "id": 2,
+      "src": "/images/riviera_slider/riviera_slider_2.jpg",
+      "alt": "Image 2"
+    },
+    {
+      "id": 3,
+      "src": "/images/riviera_slider/riviera_slider_3.jpg",
+      "alt": "Image 3"
+    },
+    {
+      "id": 4,
+      "src": "/images/riviera_slider/riviera_slider_4.jpg",
+      "alt": "Image 4"
+    },
+    {
+      "id": 5,
+      "src": "/images/riviera_slider/riviera_slider_5.jpg",
+      "alt": "Image 5"
+    },
+    {
+      "id": 6,
+      "src": "/images/riviera_slider/riviera_slider_6.jpg",
+      "alt": "Image 6"
+    },
+    {
+      "id": 7,
+      "src": "/images/riviera_slider/riviera_slider_7.jpg",
+      "alt": "Image 7"
+    },
+    {
+      "id": 8,
+      "src": "/images/riviera_slider/riviera_slider_8.jpg",
+      "alt": "Image 8"
+    },
+    {
+      "id": 9,
+      "src": "/images/riviera_slider/riviera_slider_9.jpg",
+      "alt": "Image 9"
+    },
+    {
+      "id": 10,
+      "src": "/images/riviera_slider/riviera_slider_10.jpg",
+      "alt": "Image 10"
+    },
+    {
+      "id": 11,
+      "src": "/images/riviera_slider/riviera_slider_11.jpg",
+      "alt": "Image 11"
+    },
+    {
+      "id": 12,
+      "src": "/images/riviera_slider/riviera_slider_12.jpg",
+      "alt": "Image 12"
+    },
+    {
+      "id": 13,
+      "src": "/images/riviera_slider/riviera_slider_13.jpg",
+      "alt": "Image 13"
+    },
+    {
+      "id": 14,
+      "src": "/images/riviera_slider/riviera_slider_14.jpg",
+      "alt": "Image 14"
+    }
+  ],
+  "grandis": [
+    {
+      "id": 1,
+      "src": "/images/grandis_slider/grandis_slider_1.jpg",
+      "alt": "Image 1"
+    },
+    {
+      "id": 3,
+      "src": "/images/grandis_slider/grandis_slider_2.jpg",
+      "alt": "Image 3"
+    },
+    {
+      "id": 4,
+      "src": "/images/grandis_slider/grandis_slider_3.jpg",
+      "alt": "Image 4"
+    },
+    {
+      "id": 6,
+      "src": "/images/grandis_slider/grandis_slider_4.jpg",
+      "alt": "Image 6"
+    },
+    {
+      "id": 7,
+      "src": "/images/grandis_slider/grandis_slider_5.jpg",
+      "alt": "Image 7"
+    },
+    {
+      "id": 8,
+      "src": "/images/grandis_slider/grandis_slider_6.jpg",
+      "alt": "Image 8"
+    },
+    {
+      "id": 9,
+      "src": "/images/grandis_slider/grandis_slider_7.jpg",
+      "alt": "Image 9"
+    },
+    {
+      "id": 10,
+      "src": "/images/grandis_slider/grandis_slider_8.jpg",
+      "alt": "Image 10"
+    },
+    {
+      "id": 11,
+      "src": "/images/grandis_slider/grandis_slider_9.jpg",
+      "alt": "Image 11"
+    },
+    {
+      "id": 12,
+      "src": "/images/grandis_slider/grandis_slider_10.jpg",
+      "alt": "Image 12"
+    },
+    {
+      "id": 13,
+      "src": "/images/grandis_slider/grandis_slider_11.jpg",
+      "alt": "Image 13"
+    },
+    {
+      "id": 14,
+      "src": "/images/grandis_slider/grandis_slider_12.jpg",
+      "alt": "Image 14`"
+    }
+  ]
+}

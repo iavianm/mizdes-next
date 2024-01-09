@@ -1,0 +1,168 @@
+.intro__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background: #000 url("/images/intro-img.jpg") no-repeat center;
+  background-size: 100% 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.intro__opacity {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
+
+.intro__content {
+  max-width: 1280px;
+  width: calc(100% - 2 * 70px);
+  margin: 0 auto;
+  color: white;
+  z-index: 2;
+}
+
+.intro__content h1 {
+  max-width: 900px;
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-size: 72px;
+  line-height: 68px;
+}
+
+.intro__content h3 {
+  max-width: 900px;
+  margin: 0;
+  padding: 0 0 40px 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.intro__content p {
+  max-width: 900px;
+  margin: 0;
+  padding: 0 0 140px 0;
+  font-size: 20px;
+  /*hyphens: auto;*/
+}
+
+.intro__content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 30px 0;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.intro__feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.intro__button {
+  cursor: pointer;
+  background-color: var(--orange-color) !important;
+  text-transform: uppercase;
+  height: auto !important;
+  padding: 10px 30px !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  transition: transform 0.1s ease-in-out;
+}
+
+.intro__button:hover {
+  background-color: var(--orange-color-hover) !important;
+  transform: scale(1.01);
+}
+
+@media screen and (max-width: 1700px) {
+  .intro__section {
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .intro__content h1 {
+    margin: 0;
+    padding: 0 0 20px 0;
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  .intro__content p {
+    padding: 0 0 60px 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro__content {
+    width: 90%;
+  }
+
+  .intro__content h3 {
+    font-size: 18px;
+  }
+
+  .intro__content h1 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .intro__content p {
+    font-size: 16px;
+    width: calc(100% - 20px);
+  }
+
+  .intro__section {
+    padding: 30px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .intro__section {
+    height: 60vh;
+  }
+
+  .intro__content {
+    width: 100%;
+  }
+
+  .intro__content h3 {
+    font-size: 12px;
+  }
+
+  .intro__content h1 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  .intro__feature {
+    font-size: 12px;
+  }
+
+  .intro__button {
+    padding: 10px 30px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .intro__button {
+    margin: 0 auto !important;
+    display: block !important;
+  }
+}
