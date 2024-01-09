@@ -7,6 +7,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { AdminStateProvider } from "@/context/AdminStateContext";
 import YandexMetrika from "@/components/YandexMetrika/YandexMetrika";
+import Head from "next/head";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -14,7 +15,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Мы здесь — база отдыха в Ленобласти",
+  title: "Главная | МЫ ЗДЕСЬ — база отдыха в Ленобласти",
   description:
     "Наслаждайтесь незабываемым отдыхом в базе отдыха 'Мы Здесь' в живописной Ленинградской области. Идеальное место для семейного отдыха и отдыха на природе.",
 };
