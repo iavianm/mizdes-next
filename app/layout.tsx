@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import React from "react";
+import React, { Suspense } from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { AdminStateProvider } from "@/context/AdminStateContext";
+import { Metrika } from "@/components/Metrica/Metrica";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -26,6 +27,9 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
         <AntdRegistry>{children}</AntdRegistry>
         <Footer />
       </AdminStateProvider>
+      <Suspense>
+        <Metrika />
+      </Suspense>
     </body>
   </html>
 );
