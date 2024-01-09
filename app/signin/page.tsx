@@ -1,7 +1,10 @@
-export default async function Signin() {
+"use client";
+import LoginForm from "@/components/LoginForm/LoginForm";
+
+export default function Signin() {
   return (
     <div>
-      <h1>SingIn</h1>
+      <LoginForm />
     </div>
   );
 }

@@ -30,8 +30,9 @@
 
 .header__button_container {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   align-items: center;
+  margin-right: 10px;
 }
 
 .header__button_admin {
@@ -56,4 +57,16 @@
 }
 
 @media screen and (max-width: 480px) {
+  .header__button_container {
+    gap: 10px;
+    margin-left: 10px;
+  }
+
+  .header__button_admin {
+    gap: 10px;
+  }
+
+  .header__logo {
+    display: none;
+  }
 }

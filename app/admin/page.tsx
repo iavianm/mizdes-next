@@ -1,17 +1,25 @@
 "use client";
-import styles from "./page.module.css";
-import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 import AdminComponent from "@/components/AdminComponent/AdminComponent";
+import styles from "./page.module.css";
+import { loginWithCookie } from "@/app/api/api";
 
 const Admin: React.FC = () => {
-  const session = useSession();
+  const router = useRouter();
 
-  if (!session?.data) {
-    redirect("/api/auth/signin");
-    return null;
-  }
+  useEffect(() => {
+    loginWithCookie()
+      .then((user) => {
+        if (user && typeof user === "object") {
+          console.log("true");
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+        router.push("/signin");
+      });
+  }, []);
 
   return (
     <main className={styles.main}>

@@ -5,7 +5,6 @@ import "./globals.css";
 import React from "react";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-import { Providers } from "@/components/Providers/Providers";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -21,11 +20,9 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="ru">
     <body className={roboto.className}>
-      <Providers>
-        <Header />
-        <AntdRegistry>{children}</AntdRegistry>
-        <Footer />
-      </Providers>
+      <Header />
+      <AntdRegistry>{children}</AntdRegistry>
+      <Footer />
     </body>
   </html>
 );

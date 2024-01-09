@@ -5,11 +5,25 @@ import Navigation from "@/components/Navigation/Navigation";
 import { navItems } from "../../content/navItemsContent.json";
 import BurgerMenu from "@/components/BurgerMenu/BurgerMenu";
 import OrderButton from "@/components/OrderButton/OrderButton";
-import { signOut, useSession } from "next-auth/react";
 import { LogoutOutlined, UserOutlined } from "@ant-design/icons";
+import { useEffect, useState } from "react";
+import { loginWithCookie } from "@/app/api/api";
 
 function Header() {
-  const session = useSession();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    loginWithCookie()
+      .then((user) => {
+        if (user && typeof user === "object") {
+          console.log("true");
+          setIsAdmin(true);
+        }
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -18,13 +32,13 @@ function Header() {
       <div className={styles.header__button_container}>
         <OrderButton />
         <div className={styles.header__button_admin}>
-          {session?.data && (
+          {isAdmin && (
             <Link href="/admin">
               <UserOutlined style={{ color: "#d38c20", fontSize: "24px" }} />
             </Link>
           )}
-          {session?.data && (
-            <Link href={"#"} onClick={() => signOut({ callbackUrl: "/" })}>
+          {isAdmin && (
+            <Link href={"#"}>
               <LogoutOutlined style={{ color: "#d38c20", fontSize: "24px" }} />
             </Link>
           )}
