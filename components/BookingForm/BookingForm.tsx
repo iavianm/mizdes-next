@@ -82,6 +82,10 @@ const checkAvailability = (
   const arrivalDate = new Date(arrival);
   const departureDate = new Date(departure);
 
+  if (isNaN(arrivalDate.getTime()) || isNaN(departureDate.getTime())) {
+    return 0;
+  }
+
   const countBookings = bookings.filter((booking) => {
     if (booking.cottage !== cottage) {
       return false;
@@ -133,7 +137,7 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
     );
 
     setAvailableCottages(newAvailableCottages);
-  }, [arrivalDateValue, departureDateValue, bookedDates]);
+  }, [arrivalDateValue, departureDateValue, bookedDates, initialBooking]);
 
   return (
     <Formik
@@ -224,9 +228,9 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
               <Field as="select" name="cottage" className={styles.selectStyle}>
                 <option value="">Выбрать...</option>
                 {availableCottages.length > 0 ? (
-                  availableCottages.map((cottageType) => (
-                    <option key={cottageType} value={cottageType}>
-                      {capitalize(cottageType)}
+                  availableCottages.map((cottage) => (
+                    <option key={cottage} value={cottage}>
+                      {capitalize(cottage)}
                     </option>
                   ))
                 ) : (

@@ -2,7 +2,6 @@
   max-width: 396px;
   width: 100%;
   margin: 0;
-  font-family: "Inter", Arial, sans-serif;
   font-style: normal;
 }
 
@@ -41,15 +40,15 @@
 }
 
 .form__button:hover {
-  transform: scale(1.1);
+  transform: scale(1.01);
 }
 
-.form__button-disable {
+.form__button_disable {
   background: #c5c4c4;
   cursor: default;
 }
 
-.form__button-disable:hover {
+.form__button_disable:hover {
   transform: none;
 }
 
@@ -75,7 +74,7 @@
 }
 
 .forms__link-enter:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 .form__body {
@@ -85,9 +84,8 @@
   min-height: 207px;
 }
 
-.form__error-message {
+.form__error_message {
   text-align: center;
-  margin: 95px 0 0 0;
   padding: 0;
   color: #ff6838;
   font-size: 11px;
@@ -111,7 +109,7 @@
   }
 
   .form__button {
-    margin-top: calc(216px - (216 - 128) * ((100vw - 320px) / (768 - 320)));
+    /*margin-top: calc(116px - (116 - 28) * ((100vw - 320px) / (768 - 320)));*/
     font-size: 12px;
   }
 

@@ -36,10 +36,14 @@ const LoginForm = () => {
   }
 
   return (
-    <div className={"forms"}>
-      <h3 className={"forms__title"}>{"Рады видеть!"}</h3>
-      <form className={"form"} onSubmit={handleSubmit(onSubmit)} noValidate>
-        <div className={"form__body"}>
+    <div className={styles.forms}>
+      {/*<h3 className={styles.forms__title}>{"Рады видеть!"}</h3>*/}
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
+        <div className={styles.form__body}>
           <Input
             text={"E-mail"}
             label={"email"}
@@ -58,9 +62,11 @@ const LoginForm = () => {
           />
         </div>
 
-        <span className={"form__error-message"}>{errorMessage}</span>
+        <span className={styles.form__error_message}>{errorMessage}</span>
         <button
-          className={`form__button ${!isValid ? "form__button-disable" : ""}`}
+          className={`${styles.form__button} ${
+            !isValid ? styles.form__button_disable : ""
+          }`}
           type={"submit"}
           disabled={!isValid}
         >
