@@ -10,11 +10,7 @@ const Admin: React.FC = () => {
 
   useEffect(() => {
     loginWithCookie()
-      .then((user) => {
-        if (user && typeof user === "object") {
-          console.log("true");
-        }
-      })
+      .then()
       .catch((e) => {
         console.log(e);
         router.push("/signin");

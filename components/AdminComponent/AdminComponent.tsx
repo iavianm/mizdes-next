@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Table, Button, Modal } from "antd";
 import BookingForm from "../BookingForm/BookingForm";
 import { getBookings, removeBooking } from "@/app/api/api";
-import { useSession } from "next-auth/react";
 
 interface Booking {
   _id: string;
@@ -152,10 +151,17 @@ const AdminComponent = () => {
 
   return (
     <>
-      <Table dataSource={bookedDates} columns={columns} rowKey="_id" />
+      <Table
+        dataSource={bookedDates}
+        columns={columns}
+        rowKey="_id"
+        scroll={{ x: "max-content" }}
+      />
 
       <Modal
-        title="Информация о бронировании"
+        title={
+          <div className={styles.modal__title}>Информация о бронировании</div>
+        }
         open={isViewModalVisible}
         onCancel={() => setIsViewModalVisible(false)}
         footer={null}
@@ -166,11 +172,16 @@ const AdminComponent = () => {
             <p>Телефон: {selectedBooking.phone}</p>
             <p>Email: {selectedBooking.email}</p>
             <p>Коттедж: {selectedBooking.cottage}</p>
-            <p>Доп.услуги: {selectedBooking.additional}</p>
             <p>Дата заезда: {selectedBooking.arrivalDate}</p>
             <p>Дата выезда: {selectedBooking.departureDate}</p>
             <p>Взрослые: {selectedBooking.adults}</p>
             <p>Дети: {selectedBooking.kids}</p>
+            <p>Доп. услуги:</p>
+            <ul>
+              {selectedBooking.additional.map((service, index) => (
+                <li key={index}>{service}</li>
+              ))}
+            </ul>
           </>
         )}
       </Modal>
@@ -179,8 +190,8 @@ const AdminComponent = () => {
         title="Edit Booking"
         open={isEditModalVisible}
         onCancel={() => {
-          setIsEditModalVisible(false);
           setFormKey((prevKey) => prevKey + 1);
+          setIsEditModalVisible(false);
         }}
         footer={null}
       >
@@ -200,6 +211,7 @@ const AdminComponent = () => {
               additional: selectedBooking.additional,
             }}
             onSuccess={() => {
+              setFormKey((prevKey) => prevKey + 1);
               setIsEditModalVisible(false);
               Bookings();
             }}

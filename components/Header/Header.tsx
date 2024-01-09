@@ -16,7 +16,6 @@ function Header() {
     loginWithCookie()
       .then((user) => {
         if (user && typeof user === "object") {
-          console.log("true");
           setIsAdmin(true);
         }
       })

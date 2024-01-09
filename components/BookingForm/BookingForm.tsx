@@ -16,7 +16,11 @@ import {
 } from "./StyledComponents";
 import NumberInput from "./NumberInput";
 import { createBooking, getLatestBookings, updateBooking } from "@/app/api/api";
-import { BookingSchema, today } from "@/components/BookingForm/BookingSchema";
+import {
+  BookingSchema,
+  today,
+  UpdateBookingSchema,
+} from "@/components/BookingForm/BookingSchema";
 import { options } from "../../content/additionalOptionsContent.json";
 import { Select } from "antd";
 
@@ -112,14 +116,20 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
 
   useEffect(() => {
     const newAvailableCottages = Object.keys(totalCottages).filter(
-      (cottageType) =>
-        checkAvailability(
+      (cottageType) => {
+        if (initialBooking && cottageType === initialBooking.cottage) {
+          return true;
+        }
+        return checkAvailability(
           cottageType,
           arrivalDateValue,
           departureDateValue,
-          bookedDates,
+          bookedDates.filter(
+            (booking: { _id: string }) => booking._id !== initialBooking?.id,
+          ),
           totalCottages,
-        ),
+        );
+      },
     );
 
     setAvailableCottages(newAvailableCottages);
@@ -128,10 +138,9 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
   return (
     <Formik
       initialValues={initialBooking || initialValues}
-      validationSchema={BookingSchema}
+      validationSchema={initialBooking ? UpdateBookingSchema : BookingSchema}
       onSubmit={(values, actions) => {
         if (initialBooking) {
-          console.log(initialBooking);
           updateBooking(initialBooking.id, values)
             .then(() => {
               actions.setSubmitting(false);
@@ -166,7 +175,7 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
                 <StyledField
                   type="date"
                   name="arrivalDate"
-                  min={today}
+                  min={initialBooking ? undefined : today}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
                     setArrivalDateValue(e.target.value);
                     setFieldValue("arrivalDate", e.target.value);
@@ -198,7 +207,9 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
                       ? new Date(values.arrivalDate).toISOString().split("T")[0]
                       : today
                   }
+                  value={values.departureDate}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>): void => {
+                    setFieldValue("departureDate", e.target.value);
                     setDepartureDateValue(e.target.value);
                   }}
                 />
@@ -226,45 +237,6 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
                 <ErrorMessage name="cottage" component={ErrorText} />
               </ErrorMessageContainer>
             </FieldContainer>
-
-            {/*<FieldContainer>*/}
-            {/*  <label htmlFor="additional">Дополнительные опции</label>*/}
-            {/*  <Field*/}
-            {/*    as="select"*/}
-            {/*    multiple*/}
-            {/*    name="additional"*/}
-            {/*    className={styles.selectStyle}*/}
-            {/*  >*/}
-            {/*    <option value="">Выбрать...</option>*/}
-            {/*    {options.map((option) => (*/}
-            {/*      <option key={option} value={capitalize(option)}>*/}
-            {/*        {capitalize(option)}*/}
-            {/*      </option>*/}
-            {/*    ))}*/}
-            {/*  </Field>*/}
-            {/*  <ErrorMessageContainer>*/}
-            {/*    <ErrorMessage name="additional" component={ErrorText} />*/}
-            {/*  </ErrorMessageContainer>*/}
-            {/*</FieldContainer>*/}
-
-            {/*<FieldContainer>*/}
-            {/*  <label htmlFor="additional">Дополнительные опции</label>*/}
-            {/*  {options.map((option) => (*/}
-            {/*    <div key={option} className={styles.checkboxContainer}>*/}
-            {/*      <Field*/}
-            {/*        type="checkbox"*/}
-            {/*        id={`additional-${option}`}*/}
-            {/*        name="additional"*/}
-            {/*        value={capitalize(option)}*/}
-            {/*        className={styles.checkboxStyle}*/}
-            {/*      />*/}
-            {/*      <label htmlFor={`additional-${option}`}>*/}
-            {/*        {capitalize(option)}*/}
-            {/*      </label>*/}
-            {/*    </div>*/}
-            {/*  ))}*/}
-            {/*</FieldContainer>*/}
-
             <FieldContainer>
               <label htmlFor="additional">Дополнительные опции</label>
               <Field name="additional">
