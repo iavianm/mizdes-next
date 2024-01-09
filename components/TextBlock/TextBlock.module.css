@@ -1,0 +1,38 @@
+.text__block {
+  max-width: 1200px;
+  /*width: calc(100% - 2 * 70px);*/
+  margin: 0 auto 20px;
+  padding: 20px 40px;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  text-align: left;
+}
+
+.text__block h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #000000;
+}
+
+.text__block p {
+  font-size: 1em;
+  line-height: 1.4;
+  margin-bottom: 1em;
+  text-align: justify;
+  hyphens: auto;
+  word-break: break-word;
+  text-justify: inter-word;
+}
+
+@media screen and (max-width: 768px) {
+  .text__block {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text__block {
+    padding: 10px;
+  }
+}

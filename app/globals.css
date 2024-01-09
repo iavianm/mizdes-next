@@ -1,0 +1,23 @@
+:root {
+  --blue-color: #1b0c42;
+  --blue-color-rgba: rgba(27, 12, 66, 0.4);
+  --orange-color: #d38c20;
+  --orange-color-hover: #f1a129;
+  --orange-color-active: #cf8b25;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 81px;
+  }
+}

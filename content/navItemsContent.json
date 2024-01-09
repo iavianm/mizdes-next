@@ -1,0 +1,8 @@
+{
+  "navItems": [
+    { "label": "Главная", "href": "/" },
+    { "label": "Номера", "href": "/houses" },
+    { "label": "В процессе", "href": "/develop" },
+    { "label": "Контакты", "href": "/contacts" }
+  ]
+}
