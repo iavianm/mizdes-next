@@ -120,6 +120,10 @@
   /*width: 100vw;*/
 }
 
+.house__description_image img {
+  border-radius: 5px;
+}
+
 .house__button {
   background-color: var(--orange-color) !important;
 }
