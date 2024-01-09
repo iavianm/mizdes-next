@@ -1,5 +1,4 @@
-export const BASE_URL = "http://localhost:3005/api";
-// export const BASE_URL = "https://www.mizdes.com/api";
+export const BASE_URL = "https://www.mizdes.com/api";
 
 function getResponse(res) {
   if (!res.ok) {
