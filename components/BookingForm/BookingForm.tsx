@@ -111,6 +111,7 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
   const [departureDateValue, setDepartureDateValue] = useState<string>("");
   const [isDatesSelected, setIsDatesSelected] = useState(false);
   const [initWishes, setInitWishes] = useState("");
+  const [selectedCottage, setSelectedCottage] = useState("");
 
   const totalCottages = {
     riviera: 3,
@@ -155,6 +156,17 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
     setAvailableCottages(newAvailableCottages);
   }, [arrivalDateValue, departureDateValue, bookedDates, initialBooking]);
 
+  const filteredOptions = useMemo(() => {
+    if (selectedCottage === "grandis") {
+      return options;
+    } else {
+      return options.filter(
+        (option) =>
+          option !== "ароматная соль" && option !== "бомбочка для ванны",
+      );
+    }
+  }, [selectedCottage]);
+
   return (
     <Formik
       initialValues={initialBooking || initialValues}
@@ -186,17 +198,6 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
       {(formikProps) => {
         const { values, setFieldValue, isSubmitting, isValid, dirty } =
           formikProps;
-
-        const filteredOptions = useMemo(() => {
-          if (formikProps.values.cottage === "grandis") {
-            return options;
-          } else {
-            return options.filter(
-              (option) =>
-                option !== "ароматная соль" && option !== "бомбочка для ванны",
-            );
-          }
-        }, [formikProps.values.cottage]);
 
         return (
           <StyledForm onSubmit={formikProps.handleSubmit}>
@@ -252,7 +253,15 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
 
             <FieldContainer>
               <label htmlFor="cottage">Выберите коттедж *</label>
-              <Field as="select" name="cottage" className={styles.selectStyle}>
+              <Field
+                as="select"
+                name="cottage"
+                className={styles.selectStyle}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  formikProps.setFieldValue("cottage", e.target.value);
+                  setSelectedCottage(e.target.value);
+                }}
+              >
                 {isDatesSelected ? (
                   <>
                     <option value="">Выбрать...</option>
