@@ -118,6 +118,10 @@ export const FieldContainer = styled.div`
     width: 90%;
   }
 
+  & > textarea {
+    width: calc(100% - 20px);
+  }
+
   @media (max-width: 600px) {
     & > input {
       width: 100%;

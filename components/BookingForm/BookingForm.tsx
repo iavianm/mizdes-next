@@ -1,7 +1,7 @@
 "use client";
 import styles from "./BookingForm.module.css";
-import React, { useEffect, useState } from "react";
-import { Formik, ErrorMessage, Field, useFormik } from "formik";
+import React, { useEffect, useMemo, useState } from "react";
+import { Formik, ErrorMessage, Field } from "formik";
 import {
   StyledForm,
   FormRow,
@@ -30,12 +30,13 @@ interface FormValues {
   arrivalDate: string;
   departureDate: string;
   cottage: string;
-  additional: Array<string>;
+  additional?: Array<string>;
   adults: number;
   kids: number;
-  name: string;
+  name?: string;
   phone: string;
-  email: string;
+  email?: string;
+  wishes?: string;
 }
 
 interface Props {
@@ -53,6 +54,7 @@ const initialValues: FormValues = {
   name: "",
   phone: "",
   email: "",
+  wishes: "",
 };
 
 interface TotalCottages {
@@ -70,6 +72,7 @@ interface Booking {
   phone: string;
   email: string;
   additional: Array<string>;
+  wishes: string;
 }
 
 const checkAvailability = (
@@ -106,6 +109,8 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
   const [availableCottages, setAvailableCottages] = useState<string[]>([]);
   const [arrivalDateValue, setArrivalDateValue] = useState<string>("");
   const [departureDateValue, setDepartureDateValue] = useState<string>("");
+  const [isDatesSelected, setIsDatesSelected] = useState(false);
+  const [initWishes, setInitWishes] = useState("");
 
   const totalCottages = {
     riviera: 3,
@@ -116,6 +121,17 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
     getLatestBookings().then((res) => {
       setBookedDates(res);
     });
+  }, []);
+
+  useEffect(() => {
+    setIsDatesSelected(!!arrivalDateValue && !!departureDateValue);
+  }, [arrivalDateValue, departureDateValue]);
+
+  useEffect(() => {
+    if (initialBooking) {
+      setIsDatesSelected(true);
+      setInitWishes(initialBooking.wishes);
+    }
   }, []);
 
   useEffect(() => {
@@ -170,6 +186,17 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
       {(formikProps) => {
         const { values, setFieldValue, isSubmitting, isValid, dirty } =
           formikProps;
+
+        const filteredOptions = useMemo(() => {
+          if (formikProps.values.cottage === "grandis") {
+            return options;
+          } else {
+            return options.filter(
+              (option) =>
+                option !== "ароматная соль" && option !== "бомбочка для ванны",
+            );
+          }
+        }, [formikProps.values.cottage]);
 
         return (
           <StyledForm onSubmit={formikProps.handleSubmit}>
@@ -226,15 +253,21 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
             <FieldContainer>
               <label htmlFor="cottage">Выберите коттедж *</label>
               <Field as="select" name="cottage" className={styles.selectStyle}>
-                <option value="">Выбрать...</option>
-                {availableCottages.length > 0 ? (
-                  availableCottages.map((cottage) => (
-                    <option key={cottage} value={cottage}>
-                      {capitalize(cottage)}
-                    </option>
-                  ))
+                {isDatesSelected ? (
+                  <>
+                    <option value="">Выбрать...</option>
+                    {availableCottages.length > 0 ? (
+                      availableCottages.map((cottage) => (
+                        <option key={cottage} value={cottage}>
+                          {capitalize(cottage)}
+                        </option>
+                      ))
+                    ) : (
+                      <option value="">Все виллы заняты в этот период</option>
+                    )}
+                  </>
                 ) : (
-                  <option value="">Все виллы заняты в этот период</option>
+                  <option value="">Выберите желаемые даты</option>
                 )}
               </Field>
               <ErrorMessageContainer>
@@ -256,7 +289,7 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
                     className={styles.selectStyle}
                     bordered={false}
                   >
-                    {options.map((option) => (
+                    {filteredOptions.map((option) => (
                       <Option key={option} value={capitalize(option)}>
                         {capitalize(option)}
                       </Option>
@@ -310,6 +343,24 @@ const BookingForm: React.FC<Props> = ({ onSuccess, initialBooking }) => {
               <label htmlFor="name">Ваше имя</label>
               <StyledField type="text" name="name" />
             </FormRowName>
+
+            <FieldContainer>
+              <label htmlFor="wishes">Ваши пожелания</label>
+              <StyledField
+                type="text"
+                as="textarea"
+                name="wishes"
+                value={initWishes}
+                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+                  setFieldValue("wishes", e.target.value);
+                  setInitWishes(e.target.value);
+                }}
+                placeholder="Напишите ваши дополнительные пожелания здесь..."
+              />
+              <ErrorMessageContainer>
+                <ErrorMessage name="wishes" component={ErrorText} />
+              </ErrorMessageContainer>
+            </FieldContainer>
 
             <StyledButton
               type="submit"
