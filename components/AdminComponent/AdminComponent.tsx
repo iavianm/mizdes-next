@@ -16,6 +16,7 @@ interface Booking {
   departureDate: string;
   adults: number;
   kids: number;
+  wishes: string;
 }
 
 const AdminComponent = () => {
@@ -66,26 +67,10 @@ const AdminComponent = () => {
   };
 
   const columns = [
-    {
-      title: "Имя",
-      dataIndex: "name",
-      key: "name",
-    },
-    {
-      title: "Телефон",
-      dataIndex: "phone",
-      key: "phone",
-    },
-    {
-      title: "Email",
-      dataIndex: "email",
-      key: "email",
-    },
-    {
-      title: "Коттедж",
-      dataIndex: "cottage",
-      key: "cottage",
-    },
+    { title: "Имя", dataIndex: "name", key: "name" },
+    { title: "Телефон", dataIndex: "phone", key: "phone" },
+    { title: "Email", dataIndex: "email", key: "email" },
+    { title: "Коттедж", dataIndex: "cottage", key: "cottage" },
     {
       title: "Доп.услуги",
       dataIndex: "additional",
@@ -98,26 +83,11 @@ const AdminComponent = () => {
         </>
       ),
     },
-    {
-      title: "Дата заезда",
-      dataIndex: "arrivalDate",
-      key: "arrivalDate",
-    },
-    {
-      title: "Дата выезда",
-      dataIndex: "departureDate",
-      key: "departureDate",
-    },
-    {
-      title: "Взрослые",
-      dataIndex: "adults",
-      key: "adults",
-    },
-    {
-      title: "Дети",
-      dataIndex: "kids",
-      key: "kids",
-    },
+    { title: "Дата заезда", dataIndex: "arrivalDate", key: "arrivalDate" },
+    { title: "Дата выезда", dataIndex: "departureDate", key: "departureDate" },
+    { title: "Взрослые", dataIndex: "adults", key: "adults" },
+    { title: "Дети", dataIndex: "kids", key: "kids" },
+    { title: "Пожелания", dataIndex: "wishes", key: "wishes" },
     {
       title: "Действия",
       key: "actions",
@@ -176,6 +146,7 @@ const AdminComponent = () => {
             <p>Дата выезда: {selectedBooking.departureDate}</p>
             <p>Взрослые: {selectedBooking.adults}</p>
             <p>Дети: {selectedBooking.kids}</p>
+            <p>Пожелания: {selectedBooking.wishes}</p>
             <p>Доп. услуги:</p>
             <ul>
               {selectedBooking.additional.map((service, index) => (
@@ -209,6 +180,7 @@ const AdminComponent = () => {
               phone: selectedBooking.phone,
               email: selectedBooking.email,
               additional: selectedBooking.additional,
+              wishes: selectedBooking.wishes,
             }}
             onSuccess={() => {
               setFormKey((prevKey) => prevKey + 1);
