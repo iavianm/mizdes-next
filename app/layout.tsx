@@ -7,7 +7,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { AdminStateProvider } from "@/context/AdminStateContext";
 import YandexMetrika from "@/components/YandexMetrika/YandexMetrika";
-import Head from "next/head";
+import PopupWithImage from "@/components/PopupWithImage/PopupWithImage";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -29,6 +29,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
         <AntdRegistry>{children}</AntdRegistry>
         <Footer />
       </AdminStateProvider>
+      <PopupWithImage />
     </body>
   </html>
 );
