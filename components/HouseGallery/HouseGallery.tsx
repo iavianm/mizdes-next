@@ -1,7 +1,7 @@
 "use client";
 import styles from "./HouseGallery.module.css";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Modal } from "react-responsive-modal";
 import {
@@ -30,6 +30,12 @@ type Props = {
 export default function HouseGallery({ content }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
   const [initialSlide, setInitialSlide] = useState(0);
+  const [modalStyle, setModalStyle] = useState({
+    borderRadius: "10px",
+    padding: "10px",
+    height: "60vh",
+    width: "70vw",
+  });
 
   const openModal = (index: any) => {
     setInitialSlide(index);
@@ -39,6 +45,23 @@ export default function HouseGallery({ content }: Props) {
   const closeModal = () => {
     setModalOpen(false);
   };
+
+  useEffect(() => {
+    function handleResize() {
+      const isPortrait = window.innerHeight > window.innerWidth;
+      setModalStyle({
+        borderRadius: "10px",
+        padding: "10px",
+        height: isPortrait ? "60vh" : "80vh",
+        width: isPortrait ? "70vw" : "80vw",
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const customStyles = {
     closeButton: {
@@ -51,10 +74,7 @@ export default function HouseGallery({ content }: Props) {
       justifyContent: "center",
       zIndex: 1000,
     },
-    modal: {
-      borderRadius: "10px",
-      padding: "10px",
-    },
+    modal: modalStyle,
   };
 
   const closeIcon = (

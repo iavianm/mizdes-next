@@ -11,7 +11,7 @@
       "NYPrice": "Новогодняя ночь - Цена: 25 тыс.",
       "rooms": "2 комнаты",
       "description": "Функциональная, современная, компактная вилла для небольшой компании",
-      "imageSrc": "/images/riviera_new.jpeg"
+      "imageSrc": "/images/riviera_slider/1.jpg"
     },
     {
       "name": "Грандис",
@@ -20,7 +20,7 @@
       "NYPrice": "Новогодняя ночь - Цена: 40 тыс.",
       "rooms": "3 комнаты",
       "description": "Комфортная, стильная вилла для семейного отдыха",
-      "imageSrc": "/images/grandis_new.jpeg"
+      "imageSrc": "/images/grandis_slider/2.jpg"
     }
   ]
 }

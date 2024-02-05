@@ -3,7 +3,6 @@ import introContent from "@/content/introContent.json";
 import Intro from "@/components/Intro/Intro";
 import House from "@/components/House/House";
 import { riviera, grandis } from "../../content/housesContent.json";
-import housesSlider from "../../content/housesSliderContent.json";
 import Terrace from "@/components/Terrace/Terrace";
 import type { Metadata } from "next";
 
@@ -14,11 +13,34 @@ export const metadata: Metadata = {
 };
 
 const Houses = () => {
+  const grandisSlider = [];
+  const rivieraSlider = [];
+
+  for (let i = 1; i <= 26; i++) {
+    const img = `/images/grandis_slider/${i}.jpg`;
+    const item = {
+      id: i,
+      src: img,
+      alt: `grandis_img_${i}`,
+    };
+    grandisSlider.push(item);
+  }
+
+  for (let i = 1; i <= 24; i++) {
+    const img = `/images/riviera_slider/${i}.jpg`;
+    const item = {
+      id: i,
+      src: img,
+      alt: `riviera_img_${i}`,
+    };
+    rivieraSlider.push(item);
+  }
+
   return (
     <main className={styles.main}>
       <Intro content={introContent.housesPage} />
-      <House content={{ house: riviera, sliderImage: housesSlider.riviera }} />
-      <House content={{ house: grandis, sliderImage: housesSlider.grandis }} />
+      <House content={{ house: riviera, sliderImage: rivieraSlider }} />
+      <House content={{ house: grandis, sliderImage: grandisSlider }} />
       <Terrace />
     </main>
   );
