@@ -19,7 +19,6 @@ const LoginForm = () => {
   // @ts-ignore
   const onSubmit = (data) => {
     handleLogin(data);
-    // props.reset();
   };
 
   function handleLogin({ email, password }: UserCredentials) {
