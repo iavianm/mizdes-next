@@ -5,20 +5,40 @@
   display: flex;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999; /* или другое достаточно большое значение */
+  background-color: rgba(0, 0, 0, 0.75); /* пример фона оверлея */
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 10000; /* должен быть выше, чем у оверлея */
+  border: none; /* или ваш стиль кнопки */
+  background: transparent; /* или ваш стиль кнопки */
+  cursor: pointer;
+}
+
 .gallery__img {
   position: relative !important;
   height: 100% !important;
-  width: 100% !important;
+  width: 100vw !important;
   object-fit: cover !important;
   object-position: center !important;
 }
 
 .gallery__modal {
-  max-width: 70vw !important;
+  max-width: 94vw !important;
   width: 100% !important;
-  max-height: 80vh !important;
+  max-height: 94vh !important;
   height: 100% !important;
-  aspect-ratio: 1.5/2;
+  /*aspect-ratio: 1.5/2;*/
 }
 
 .gallery__modal .gallery__img {
@@ -33,7 +53,7 @@
   .gallery__modal {
     max-width: 100vw !important;
     width: 100% !important;
-    max-height: 80vh !important;
+    max-height: 100vh !important;
     height: 100% !important;
     aspect-ratio: 2/1;
   }
@@ -51,11 +71,11 @@
 
 @media screen and (max-width: 900px) and (orientation: portrait) {
   .gallery__modal {
-    max-width: 70vw !important;
+    max-width: 100vw !important;
     width: 100% !important;
-    max-height: 90vh !important;
+    max-height: 100vh !important;
     height: 100% !important;
-    aspect-ratio: 1/2;
+    /*aspect-ratio: 1/2;*/
   }
 
   .gallery__img {

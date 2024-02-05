@@ -1,9 +1,9 @@
 "use client";
 import styles from "./HouseGallery.module.css";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Modal } from "react-responsive-modal";
+import Modal from "react-modal";
 import {
   Navigation,
   Pagination,
@@ -15,7 +15,6 @@ import {
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "react-responsive-modal/styles.css";
 
 interface SliderImage {
   id: number;
@@ -30,12 +29,19 @@ type Props = {
 export default function HouseGallery({ content }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
   const [initialSlide, setInitialSlide] = useState(0);
-  const [modalStyle, setModalStyle] = useState({
-    borderRadius: "10px",
-    padding: "10px",
-    height: "60vh",
-    width: "70vw",
-  });
+
+  const customStyles = {
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      height: "85%",
+      width: "90%",
+    },
+  };
 
   const openModal = (index: any) => {
     setInitialSlide(index);
@@ -44,37 +50,6 @@ export default function HouseGallery({ content }: Props) {
 
   const closeModal = () => {
     setModalOpen(false);
-  };
-
-  useEffect(() => {
-    function handleResize() {
-      const isPortrait = window.innerHeight > window.innerWidth;
-      setModalStyle({
-        borderRadius: "10px",
-        padding: "10px",
-        height: isPortrait ? "60vh" : "80vh",
-        width: isPortrait ? "70vw" : "80vw",
-      });
-    }
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const customStyles = {
-    closeButton: {
-      background: "orange",
-      borderRadius: "50%",
-      width: "30px",
-      height: "30px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      zIndex: 1000,
-    },
-    modal: modalStyle,
   };
 
   const closeIcon = (
@@ -111,12 +86,14 @@ export default function HouseGallery({ content }: Props) {
       </Swiper>
 
       <Modal
-        open={modalOpen}
-        onClose={closeModal}
-        center
-        styles={customStyles}
-        closeIcon={closeIcon}
+        isOpen={modalOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        overlayClassName={styles.overlay}
       >
+        <button onClick={closeModal} className={styles.closeButton}>
+          {closeIcon}
+        </button>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={10}
