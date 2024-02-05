@@ -67,7 +67,9 @@ const House = ({ content }: Props) => {
                   </p>
                 ))}
               </div>
-              <OrderButton />
+              <div className={styles.house__order_place}>
+                <OrderButton />
+              </div>
             </div>
             <div className={styles.house__description_image}>
               <HouseGallery content={sliderImage} />
