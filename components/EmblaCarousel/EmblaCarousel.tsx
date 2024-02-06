@@ -62,19 +62,6 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     emblaApi.on("select", onSelect);
   }, [emblaApi, onInit, onSelect]);
 
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      maxHeight: "90%",
-      maxWidth: "90%",
-    },
-  };
-
   const openModal = (index: any) => {
     setInitialSlide(index);
     setModalOpen(true);
