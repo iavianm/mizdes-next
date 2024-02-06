@@ -24,8 +24,8 @@ const useModalStyle = () => {
         ? {
             content: {
               ...modalStyle.content,
-              maxHeight: isLandscape ? "80%" : "50%",
-              maxWidth: isLandscape ? "50%" : "80%",
+              maxHeight: isLandscape ? "80%" : "70%",
+              maxWidth: isLandscape ? "70%" : "80%",
             },
           }
         : {
