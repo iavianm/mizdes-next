@@ -38,8 +38,8 @@ export default function HouseGallery({ content }: Props) {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      height: "85%",
-      width: "90%",
+      maxHeight: "85%",
+      maxWidth: "90%",
     },
   };
 
@@ -66,7 +66,7 @@ export default function HouseGallery({ content }: Props) {
     <>
       <Swiper
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
+        // spaceBetween={50}
         slidesPerView={1}
         navigation
         scrollbar={{ draggable: true }}

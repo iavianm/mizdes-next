@@ -8,7 +8,7 @@
 }
 
 .house__container {
-  flex: 3;
+  /*flex: 3;*/
   padding: 20px;
 }
 
@@ -82,17 +82,16 @@
 
 .house__description {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   gap: 30px;
-  flex-direction: column-reverse;
-  align-items: center;
 }
 
 .house__description_about {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 50%;
+  flex: 1;
 }
 
 .house__description_content {
@@ -110,18 +109,14 @@
 }
 
 .house__description_image {
-  position: relative;
-  object-fit: contain;
-  cursor: pointer;
-  border-radius: 8px;
-  max-width: 60vw;
-  width: 100%;
-  height: 60vh;
+  max-width: 50%;
+  flex: 1;
 }
 
 .house__description_image img {
-  border-radius: 5px;
-  width: 100%;
+  /*border-radius: 5px;*/
+  /*max-width: 100%;*/
+  /*width: 100vw;*/
 }
 
 .house__button {
@@ -136,7 +131,7 @@
 @media screen and (max-width: 1120px) {
   .house__section {
     display: block;
-    max-width: 100%;
+    max-width: 95%;
     margin: 50px auto;
     gap: 20px;
     border-bottom: var(--orange-color) 1px solid;
@@ -152,10 +147,12 @@
   .house__description {
     flex-direction: column-reverse;
     align-items: center;
+    width: 80%;
   }
 
   .house__description_about {
-    width: 80%;
+    width: 100%;
+    max-width: 100%;
   }
 
   .house__info_tags {
@@ -176,13 +173,13 @@
   .house__description_image {
     position: relative;
     margin-bottom: 20px;
-    max-width: 74vw;
+    max-width: 78vw;
     width: 100%;
     border-radius: 5px;
   }
 
   .house__description_image img {
-    width: 100%;
+    max-width: 100%;
     object-fit: cover;
     border-radius: 5px;
   }
@@ -196,6 +193,10 @@
 @media screen and (max-width: 770px) {
   .house__info {
     margin-bottom: 20px;
+  }
+
+  .house__info_tags {
+    width: 100%;
   }
 
   .house__about {
@@ -214,12 +215,25 @@
     font-size: 16px;
   }
 
+  .house__description {
+    width: 100%;
+  }
+
   .house__description_image {
-    max-width: 72vw;
+    max-width: 100vw;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .house__container {
+    /*flex: 3;*/
+    padding: 0;
+  }
+
+  .house__section {
+    max-width: 100%;
+  }
+
   .house__about_description {
     width: 100%;
   }
@@ -233,7 +247,7 @@
   }
 
   .house__description_image {
-    max-width: 90vw;
+    max-width: 95vw;
   }
 }
 
@@ -285,5 +299,9 @@
 @media screen and (max-width: 400px) {
   .house__about_specs {
     font-size: 0.8rem;
+  }
+
+  .house__description_image {
+    height: 20vh;
   }
 }

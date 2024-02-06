@@ -1,6 +1,6 @@
 import styles from "./Features.module.css";
 import { featureItems } from "../../content/featureContent.json";
-import HouseGallery from "@/components/HouseGallery/HouseGallery";
+import EmblaCarousel from "@/components/EmblaCarousel/EmblaCarousel";
 
 const Features = () => {
   return (
@@ -23,7 +23,7 @@ const Features = () => {
             return (
               <div className={styles.feature__item} key={item.id}>
                 <div className={styles.feature__item_img}>
-                  <HouseGallery content={item.src} />
+                  <EmblaCarousel slides={item.src} />
                 </div>
 
                 <div className={styles.feature__info}>

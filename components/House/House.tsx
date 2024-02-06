@@ -1,6 +1,6 @@
 import styles from "./House.module.css";
-import HouseGallery from "@/components/HouseGallery/HouseGallery";
 import OrderButton from "@/components/OrderButton/OrderButton";
+import EmblaCarousel from "@/components/EmblaCarousel/EmblaCarousel";
 
 interface Image {
   imageSrc: string;
@@ -72,7 +72,7 @@ const House = ({ content }: Props) => {
               </div>
             </div>
             <div className={styles.house__description_image}>
-              <HouseGallery content={sliderImage} />
+              <EmblaCarousel slides={sliderImage} />
             </div>
           </div>
         </div>
