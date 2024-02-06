@@ -70,7 +70,7 @@
 .embla {
   --slide-spacing: 1rem;
   --slide-size: 100%;
-  --slide-height: 30rem;
+  --slide-height: auto;
   /*padding: 0.5rem;*/
   position: relative;
 }
@@ -78,7 +78,7 @@
 .embla__modal {
   --slide-spacing: 1rem;
   --slide-size: 100%;
-  --slide-height: 90vh;
+  --slide-height: 100%;
   /*padding: 0.1rem;*/
   position: relative;
 }
@@ -103,20 +103,20 @@
   display: block;
   height: var(--slide-height);
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
 }
 
 .embla__slide__modal {
-  flex: 0 0 var(--slide-size);
-  min-width: 0;
-  padding-left: var(--slide-spacing);
+  /*flex: 0 0 var(--slide-size);*/
+  min-width: 100%;
+  /*padding-left: var(--slide-spacing);*/
   position: relative;
 }
 
 .embla__slide__modal__img {
-  display: block;
-  height: 80vh;
+  position: relative;
+  height: 100%;
   width: 100%;
   object-fit: contain;
   border-radius: 8px;
@@ -171,7 +171,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 1.6rem;
+  justify-content: space-between;
+  width: 100%;
+  pointer-events: none;
 }
 .embla__button {
   z-index: 1;
@@ -182,13 +184,14 @@
   cursor: pointer;
   width: 4rem;
   height: 4rem;
+  pointer-events: all;
 }
 .embla__button:disabled {
   opacity: 0.3;
 }
 .embla__button__svg {
-  width: 65%;
-  height: 65%;
+  width: 45%;
+  height: 45%;
 }
 .embla__dot {
   -webkit-appearance: none;
@@ -234,11 +237,19 @@
   );
 }
 
+.embla__slide__modal__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
 .closeButton {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 10000;
+  top: 3%;
+  right: 3%;
+  z-index: 100070;
   border: none;
   cursor: pointer;
   background: #f1a129;
@@ -269,15 +280,16 @@
 @media screen and (max-width: 1120px) {
 }
 
-@media screen and (max-width: 600px) {
-  .embla__slide__modal {
-    height: 50vh;
-  }
+/*@media screen and (max-width: 800px) {*/
+/*  !*.embla__slide__modal {*!*/
+/*  !*  height: 50vh;*!*/
+/*  !*}*!*/
 
-  .embla__slide__modal__img {
-    height: 50vh;
-  }
-}
+/*  .embla__slide__modal__img {*/
+/*    !*height: 90vh;*!*/
+/*    width: 100%;*/
+/*  }*/
+/*}*/
 
 @media screen and (max-width: 400px) {
   .embla {

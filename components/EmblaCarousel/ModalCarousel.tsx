@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import styles from "./EmblaCarousel.module.css";
 import {
@@ -44,19 +44,21 @@ const ModalCarousel = ({ slides, initialSlide }: ModalCarouselProps) => {
           <div className={styles.embla__container}>
             {slides.map((slide, index) => (
               <div className={styles.embla__slide__modal} key={index}>
-                <img
-                  src={slide.src}
-                  alt={`Slide ${index}`}
-                  className={styles.embla__slide__modal__img}
-                />
+                <div className={styles.embla__slide__modal__container}>
+                  <img
+                    src={slide.src}
+                    alt={`Slide ${index}`}
+                    className={styles.embla__slide__modal__img}
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
-      <div className={styles.embla__buttons}>
-        <PrevButton onClick={scrollPrev} />
-        <NextButton onClick={scrollNext} />
+        <div className={styles.embla__buttons}>
+          <PrevButton onClick={scrollPrev} />
+          <NextButton onClick={scrollNext} />
+        </div>
       </div>
     </>
   );

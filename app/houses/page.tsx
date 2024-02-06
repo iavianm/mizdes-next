@@ -16,7 +16,7 @@ const Houses = () => {
   const grandisSlider = [];
   const rivieraSlider = [];
 
-  for (let i = 1; i <= 24; i++) {
+  for (let i = 1; i <= 19; i++) {
     const img = `/images/grandis_slider/${i}.jpg`;
     const item = {
       id: i,
@@ -26,7 +26,7 @@ const Houses = () => {
     grandisSlider.push(item);
   }
 
-  for (let i = 1; i <= 24; i++) {
+  for (let i = 1; i <= 15; i++) {
     const img = `/images/riviera_slider/${i}.jpg`;
     const item = {
       id: i,
