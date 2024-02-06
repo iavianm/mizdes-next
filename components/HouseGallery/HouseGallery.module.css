@@ -1,8 +1,8 @@
 .gallery__section {
   position: relative !important;
-  max-height: 100% !important;
-  height: 100% !important;
-  display: flex;
+  /*max-height: 100% !important;*/
+  /*height: 50% !important;*/
+  /*display: flex;*/
 }
 
 .overlay {
@@ -13,6 +13,23 @@
   bottom: 0;
   z-index: 9999; /* или другое достаточно большое значение */
   background-color: rgba(0, 0, 0, 0.75); /* пример фона оверлея */
+}
+
+.modalContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%; /* Максимальная ширина модального окна */
+  max-height: 85%; /* Максимальная высота модального окна */
+  padding: 16px; /* Отступ внутри модального окна */
+  overflow: hidden; /* Убедитесь, что всё содержимое остаётся внутри */
+  background: white; /* Или любой другой предпочтительный цвет фона */
+  border-radius: 10px; /* Скруглённые углы */
+  display: flex; /* Для центровки изображения */
+  justify-content: center; /* Горизонтальная центровка */
+  align-items: center; /* Вертикальная центровка */
+  z-index: 10000; /* Поверх всех других элементов */
 }
 
 .closeButton {
@@ -26,11 +43,15 @@
 }
 
 .gallery__img {
-  position: relative !important;
-  height: 100% !important;
-  width: 100vw !important;
-  object-fit: cover !important;
-  object-position: center !important;
+  /*position: relative !important;*/
+  /*max-height: 100% !important;*/
+  /*height: 60vh !important;*/
+  /*max-width: 100% !important;*/
+  /*width: 100vh !important;*/
+  /*object-fit: contain !important;*/
+  /*object-position: center !important;*/
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .gallery__modal {
@@ -43,8 +64,8 @@
 
 .gallery__modal .gallery__img {
   position: relative !important;
-  height: 100% !important;
-  width: 100% !important;
+  max-height: 100% !important;
+  max-width: 100% !important;
   object-fit: contain !important;
   object-position: center !important;
 }
@@ -60,12 +81,12 @@
 
   .gallery__img {
     position: relative !important;
-    height: 100% !important;
-    width: 100% !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    max-width: 100vw !important;
-    max-height: 100vh !important;
+    /*height: 100% !important;*/
+    /*width: 100% !important;*/
+    /*object-fit: contain !important;*/
+    /*object-position: center !important;*/
+    /*max-width: 100vw !important;*/
+    /*max-height: 100vh !important;*/
   }
 }
 
@@ -80,10 +101,10 @@
 
   .gallery__img {
     position: relative !important;
-    height: 100% !important;
+    height: 40vh !important;
     width: 100% !important;
     object-fit: contain !important;
-    object-position: center !important;
+    /*object-position: center !important;*/
     max-width: 100vw !important;
   }
 }
