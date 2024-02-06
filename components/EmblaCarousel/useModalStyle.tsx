@@ -10,12 +10,8 @@ const useModalStyle = () => {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      // height: "100%",
       maxWidth: "1120px",
       width: "95%",
-      maxHeight: "95vh",
-
-      height: "95%",
       background: "transparent",
       border: "none",
       padding: 0,
@@ -24,7 +20,7 @@ const useModalStyle = () => {
 
   useEffect(() => {
     const updateModalStyle = () => {
-      const isMobile = window.innerWidth <= 1100;
+      const isMobile = window.innerWidth <= 979;
       const isLandscape = window.innerWidth > window.innerHeight;
 
       const newStyle = isMobile
@@ -32,8 +28,7 @@ const useModalStyle = () => {
             content: {
               ...modalStyle.content,
               maxHeight: isLandscape ? "95%" : "95%",
-              maxWidth: isLandscape ? "63%" : "95%",
-              top: isLandscape ? "50%" : "75%",
+              maxWidth: isLandscape ? "60%" : "95%",
             },
           }
         : {
@@ -41,7 +36,6 @@ const useModalStyle = () => {
               ...modalStyle.content,
               maxHeight: "95%",
               maxWidth: "1120px",
-              top: "60%",
             },
           };
 
