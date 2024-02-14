@@ -1,9 +1,9 @@
 "use client";
 import styles from "./EmblaCarousel.module.css";
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { EmblaCarouselType, EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import { PrevButton, NextButton } from "./EmblaCarouselArrowsDotsButtons";
+import { NextButton, PrevButton } from "./EmblaCarouselArrowsDotsButtons";
 import Modal from "react-modal";
 import ModalCarousel from "@/components/EmblaCarousel/ModalCarousel";
 import useModalStyle from "@/components/EmblaCarousel/useModalStyle";
@@ -21,9 +21,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const [initialSlide, setInitialSlide] = useState(0);
 
   const OPTIONS: EmblaOptionsType = { loop: true };
-  const options = OPTIONS;
-  // const { slides, options } = props;
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS);
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
