@@ -29,7 +29,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
         <AntdRegistry>{children}</AntdRegistry>
         <Footer />
       </AdminStateProvider>
-      <PopupWithImage />
+      {/*<PopupWithImage />*/}
     </body>
   </html>
 );
