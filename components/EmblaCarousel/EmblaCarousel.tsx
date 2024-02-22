@@ -12,6 +12,7 @@ import { Slide } from "./ModalCarousel";
 
 type PropType = {
   slides: Slide[];
+  text: string;
 };
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
@@ -120,7 +121,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <button onClick={closeModal} className={styles.closeButton}>
           {closeIcon}
         </button>
-        <ModalCarousel slides={props.slides} initialSlide={initialSlide} />
+        <ModalCarousel
+          slides={props.slides}
+          text={props.text}
+          initialSlide={initialSlide}
+        />
       </Modal>
     </>
   );

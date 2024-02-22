@@ -17,13 +17,19 @@ const Features = () => {
             залива создают ощущение полного погружения в покой и единения с
             природой.
           </p>
+          <p>
+            Абстрагируйтесь от суеты в наших чанах, расположенных в окружении
+            многовековых деревьев. На территории базы отдыха имеется два банных
+            чана, которые вы можете забронировать, чтобы отдохнуть и
+            расслабиться всей компанией.
+          </p>
         </div>
         <div className={styles.features__grid}>
           {featureItems.map((item) => {
             return (
               <div className={styles.feature__item} key={item.id}>
                 <div className={styles.feature__item_img}>
-                  <EmblaCarousel slides={item.src} />
+                  <EmblaCarousel slides={item.src} text={item.about} />
                 </div>
 
                 <div className={styles.feature__info}>
