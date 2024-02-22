@@ -2,8 +2,13 @@
   "featureItems": [
     {
       "id": 1,
-      "alt": "Клубный дом",
+      "alt": "Территория",
       "src": [
+        {
+          "id": 0,
+          "src": "/images/territory/1.jpg",
+          "alt": "Image 0"
+        },
         {
           "id": 1,
           "src": "/images/features_slider/features_slider_1.jpg",
@@ -21,25 +26,8 @@
         }
       ],
       "label": "25 га",
-      "desc": "территория"
-    },
-    {
-      "id": 3,
-      "alt": "Береговая линия",
-      "src": [
-        {
-          "id": 1,
-          "src": "/images/1km.jpeg",
-          "alt": "Image 1"
-        },
-        {
-          "id": 4,
-          "src": "/images/features_slider/features_slider_4.jpg",
-          "alt": "Image 4"
-        }
-      ],
-      "label": "1 км",
-      "desc": "береговой линии"
+      "desc": "территория",
+      "about": ""
     },
     {
       "id": 2,
@@ -67,7 +55,51 @@
         }
       ],
       "label": "6 вилл",
-      "desc": "премиум-класса"
+      "desc": "премиум-класса",
+      "about": ""
+    },
+    {
+      "id": 3,
+      "alt": "Баня",
+      "src": [
+        {
+          "id": 1,
+          "src": "/images/bathhouse/1.jpg",
+          "alt": "Image 1"
+        },
+        {
+          "id": 2,
+          "src": "/images/bathhouse/2.jpg",
+          "alt": "Image 2"
+        }
+      ],
+      "label": "Бани",
+      "desc": "",
+      "about": ""
+    },
+    {
+      "id": 4,
+      "alt": "СПА услуги",
+      "src": [
+        {
+          "id": 1,
+          "src": "/images/bath_tub_slider/1.jpg",
+          "alt": "Image 1"
+        },
+        {
+          "id": 2,
+          "src": "/images/bath_tub_slider/2.jpg",
+          "alt": "Image 2"
+        },
+        {
+          "id": 3,
+          "src": "/images/bath_tub_slider/3.jpg",
+          "alt": "Image 3"
+        }
+      ],
+      "label": "СПА услуги",
+      "desc": "",
+      "about": "Купание в чане, который наполнен горячей водой, оказывает положительный эффект на организм. Улучшается кровообращение, появляется  эффект релаксации,  ускоряется обмен веществ, обеспечивается положительное действие на нервную систему, улучшается качество сна. Дополнительно в чан добавляются отвары трав, которые способствуют усилению положительного эффекта на организм."
     }
   ]
 }
