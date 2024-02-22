@@ -1,6 +1,7 @@
 import styles from "./Villa.module.css";
 import { Button } from "antd";
 import Link from "next/link";
+import Prices from "@/components/Prices/Prices";
 
 type VillaContent = {
   name: string;
@@ -36,7 +37,6 @@ const Villa = ({ content }: Props) => {
               <div className={styles.villa__details}>
                 <span>{area}</span>
                 <span>{rooms}</span>
-                <span>Цена: {price}</span>
               </div>
             </div>
             {/*<div className={styles.villa__nyprice}>{NYPrice}</div>*/}
@@ -44,15 +44,18 @@ const Villa = ({ content }: Props) => {
           <p className={styles.villa__description}>{description}</p>
         </div>
       </div>
-      <Link
-        href={`/houses#${name}`}
-        passHref
-        className={styles.villa__button_place}
-      >
-        <Button type="primary" className={styles.villa__button}>
-          Подробнее
-        </Button>
-      </Link>
+      <div className={styles.villa__button_container}>
+        <Link
+          href={`/houses#${name}`}
+          passHref
+          className={styles.villa__button_place}
+        >
+          <Button type="primary" className={styles.villa__button}>
+            Подробнее
+          </Button>
+        </Link>
+        <Prices title={name} />
+      </div>
     </div>
   );
 };

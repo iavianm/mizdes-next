@@ -78,6 +78,7 @@
 .house__order_place {
   display: flex;
   justify-content: center;
+  gap: 10px;
 }
 
 .house__description {
