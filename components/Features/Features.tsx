@@ -29,7 +29,7 @@ const Features = () => {
             return (
               <div className={styles.feature__item} key={item.id}>
                 <div className={styles.feature__item_img}>
-                  <EmblaCarousel slides={item.src} text={item.about} />
+                  <EmblaCarousel slides={item.src} />
                 </div>
 
                 <div className={styles.feature__info}>
