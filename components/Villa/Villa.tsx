@@ -7,7 +7,6 @@ type VillaContent = {
   name: string;
   area: string;
   rooms: string;
-  price: string;
   NYPrice: string;
   description: string;
   imageSrc: string;
@@ -18,7 +17,7 @@ type Props = {
 };
 
 const Villa = ({ content }: Props) => {
-  const { name, area, rooms, price, NYPrice, description, imageSrc } = content;
+  const { name, area, rooms, NYPrice, description, imageSrc } = content;
 
   return (
     <div className={styles.villa__card}>
