@@ -50,7 +50,7 @@ const Villa = ({ content }: Props) => {
           className={styles.villa__button_place}
         >
           <Button type="primary" className={styles.villa__button}>
-            Подробнее
+            ПОДРОБНЕЕ
           </Button>
         </Link>
         <Prices title={name} />
