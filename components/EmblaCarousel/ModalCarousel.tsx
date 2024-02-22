@@ -10,14 +10,13 @@ import {
 export type ModalCarouselProps = {
   slides: Slide[];
   initialSlide: number;
-  text: string;
 };
 
 export type Slide = {
   src: string;
 };
 
-const ModalCarousel = ({ slides, initialSlide, text }: ModalCarouselProps) => {
+const ModalCarousel = ({ slides, initialSlide }: ModalCarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     startIndex: initialSlide,
@@ -42,7 +41,6 @@ const ModalCarousel = ({ slides, initialSlide, text }: ModalCarouselProps) => {
     <>
       <div className={styles.embla__modal}>
         <div className={styles.embla__viewport} ref={emblaRef}>
-          {/*<p className={styles.embla__slide__text}>{text}</p>*/}
           <div className={styles.embla__container}>
             {slides.map((slide, index) => (
               <div className={styles.embla__slide__modal} key={index}>
