@@ -63,7 +63,7 @@ const PricesModal = ({ title }: Props) => {
   return (
     <>
       <Button type="primary" onClick={openModal}>
-        Стоимость
+        СТОИМОСТЬ
       </Button>
       <Modal
         open={visible}
