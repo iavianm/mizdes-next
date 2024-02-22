@@ -66,6 +66,12 @@
   margin-bottom: 10px;
 }
 
+.villa__button_container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
 .villa__button {
   background-color: var(--orange-color) !important;
 }

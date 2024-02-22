@@ -1,5 +1,5 @@
 export const BASE_URL = "https://www.mizdes.com/api";
-// export const BASE_URL = "http://localhost:3000/api";
+// export const BASE_URL = "http://localhost:4000/api";
 
 function getResponse(res) {
   if (!res.ok) {
@@ -67,6 +67,17 @@ export const getBookings = () =>
 
 export function getLatestBookings() {
   return fetch(`${BASE_URL}/bookings/latest`, {
+    method: "GET",
+    credentials: "include",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+  }).then(getResponse);
+}
+
+export function getLatestPrices() {
+  return fetch(`${BASE_URL}/prices`, {
     method: "GET",
     credentials: "include",
     headers: {
