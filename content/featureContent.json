@@ -5,24 +5,29 @@
       "alt": "Территория",
       "src": [
         {
-          "id": 0,
-          "src": "/images/territory/1.jpg",
-          "alt": "Image 0"
-        },
-        {
           "id": 1,
-          "src": "/images/features_slider/features_slider_1.jpg",
+          "src": "/images/features_slider/_DSC9882.jpg",
           "alt": "Image 1"
         },
         {
-          "id": 2,
-          "src": "/images/features_slider/features_slider_2.jpg",
-          "alt": "Image 3"
+          "id": 100,
+          "src": "/images/features_slider/_DSC0008.jpg",
+          "alt": "Image 100"
         },
         {
-          "id": 3,
-          "src": "/images/features_slider/features_slider_3.jpg",
-          "alt": "Image 3"
+          "id": 200,
+          "src": "/images/features_slider/_DSC0153.jpg",
+          "alt": "Image 200"
+        },
+        {
+          "id": 300,
+          "src": "/images/features_slider/_DSC9998.jpg",
+          "alt": "Image 300"
+        },
+        {
+          "id": 400,
+          "src": "/images/features_slider/features_slider_1.jpg",
+          "alt": "Image 400"
         }
       ],
       "label": "25 га",
@@ -34,24 +39,24 @@
       "alt": "Вилла",
       "src": [
         {
-          "id": 5,
-          "src": "/images/grandis_slider/3.jpg",
-          "alt": "Image 5"
+          "id": 1,
+          "src": "/images/features_slider/_DSC0042.jpg",
+          "alt": "Image 1"
         },
         {
-          "id": 6,
-          "src": "/images/riviera_slider/2.jpg",
-          "alt": "Image 6"
+          "id": 100,
+          "src": "/images/features_slider/_DSC0059.jpg",
+          "alt": "Image 100"
         },
         {
-          "id": 7,
-          "src": "/images/grandis_slider/2.jpg",
-          "alt": "Image 7"
+          "id": 200,
+          "src": "/images/features_slider/_DSC9972.jpg",
+          "alt": "Image 200"
         },
         {
-          "id": 8,
+          "id": 300,
           "src": "/images/grandis_slider/4.jpg",
-          "alt": "Image 8"
+          "alt": "Image 300"
         }
       ],
       "label": "6 вилл",
@@ -64,13 +69,23 @@
       "src": [
         {
           "id": 1,
-          "src": "/images/bathhouse/1.jpg",
+          "src": "/images/bathhouse/_DSC9847.jpg",
           "alt": "Image 1"
         },
         {
-          "id": 2,
-          "src": "/images/bathhouse/2.jpg",
-          "alt": "Image 2"
+          "id": 100,
+          "src": "/images/bathhouse/_DSC1473.jpg",
+          "alt": "Image 100"
+        },
+        {
+          "id": 200,
+          "src": "/images/bathhouse/_DSC1469.jpg",
+          "alt": "Image 200"
+        },
+        {
+          "id": 300,
+          "src": "/images/bathhouse/_DSC1475.jpg",
+          "alt": "Image 300"
         }
       ],
       "label": "Бани",
@@ -83,18 +98,23 @@
       "src": [
         {
           "id": 1,
-          "src": "/images/bath_tub_slider/1.jpg",
+          "src": "/images/bath_tub_slider/_DSC9908.jpg",
           "alt": "Image 1"
         },
         {
-          "id": 2,
-          "src": "/images/bath_tub_slider/2.jpg",
-          "alt": "Image 2"
+          "id": 100,
+          "src": "/images/bath_tub_slider/_DSC0017.jpg",
+          "alt": "Image 100"
         },
         {
-          "id": 3,
+          "id": 200,
+          "src": "/images/bath_tub_slider/_DSC0022.jpg",
+          "alt": "Image 200"
+        },
+        {
+          "id": 300,
           "src": "/images/bath_tub_slider/3.jpg",
-          "alt": "Image 3"
+          "alt": "Image 300"
         }
       ],
       "label": "СПА услуги",
