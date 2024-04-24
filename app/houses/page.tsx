@@ -5,6 +5,10 @@ import House from "@/components/House/House";
 import { riviera, grandis } from "../../content/housesContent.json";
 import Terrace from "@/components/Terrace/Terrace";
 import type { Metadata } from "next";
+import {
+  grandis as grandisSlider,
+  riviera as rivieraSlider,
+} from "../../content/housesSliderContent.json";
 
 export const metadata: Metadata = {
   title: "Номера | Уютные коттеджи для отдыха",
@@ -13,29 +17,6 @@ export const metadata: Metadata = {
 };
 
 const Houses = () => {
-  const grandisSlider = [];
-  const rivieraSlider = [];
-
-  for (let i = 1; i <= 19; i++) {
-    const img = `/images/grandis_slider/${i}.jpg`;
-    const item = {
-      id: i,
-      src: img,
-      alt: `grandis_img_${i}`,
-    };
-    grandisSlider.push(item);
-  }
-
-  for (let i = 1; i <= 15; i++) {
-    const img = `/images/riviera_slider/${i}.jpg`;
-    const item = {
-      id: i,
-      src: img,
-      alt: `riviera_img_${i}`,
-    };
-    rivieraSlider.push(item);
-  }
-
   return (
     <main className={styles.main}>
       <Intro content={introContent.housesPage} />
