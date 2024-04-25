@@ -20,6 +20,14 @@ const About = () => {
           >
             mizdesclub@yandex.ru
           </a>
+          <a
+            className={
+              styles.about__contacts_link + " " + styles.about__contacts_link_vk
+            }
+            href="https://vk.com/mizdesclub"
+          >
+            МЫ ВКонтакте
+          </a>
         </div>
 
         <iframe
