@@ -6,22 +6,23 @@
       "src": [
         {
           "id": 1,
-          "src": "/images/features_slider/_DSC9882.jpg",
+          "src": "/images/features_slider/_DSC0008.jpg",
           "alt": "Image 1"
         },
         {
           "id": 100,
-          "src": "/images/features_slider/_DSC0008.jpg",
+
+          "src": "/images/features_slider/_DSC0153.jpg",
           "alt": "Image 100"
         },
         {
           "id": 200,
-          "src": "/images/features_slider/_DSC0153.jpg",
+          "src": "/images/features_slider/_DSC0007.jpg",
           "alt": "Image 200"
         },
         {
           "id": 300,
-          "src": "/images/features_slider/_DSC9998.jpg",
+          "src": "/images/features_slider/_DSC0145.jpg",
           "alt": "Image 300"
         },
         {
@@ -40,7 +41,7 @@
       "src": [
         {
           "id": 1,
-          "src": "/images/features_slider/_DSC0042.jpg",
+          "src": "/images/features_slider/_DSC9972.jpg",
           "alt": "Image 1"
         },
         {
@@ -50,7 +51,7 @@
         },
         {
           "id": 200,
-          "src": "/images/features_slider/_DSC9972.jpg",
+          "src": "/images/features_slider/_DSC0042.jpg",
           "alt": "Image 200"
         },
         {

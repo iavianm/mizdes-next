@@ -67,6 +67,10 @@
   border-radius: 7px;
 }
 
+.about__contacts_link_vk {
+  color: #3375f6;
+}
+
 @media screen and (max-width: 768px) {
   .about__section {
     padding: 20px 0;
