@@ -8,14 +8,23 @@ interface Image {
   alt: string;
 }
 
+interface Features {
+  house: string[];
+  kitchen: string[];
+}
+
 interface House {
   title: string;
   specs: string[];
   price: string;
   description: string;
   tags: string[];
-  about: string[];
+  about_house: string[];
+  about_kitchen: string[];
+  about_bathroom: string[];
+  after_kitchen: string[];
   image: Image;
+  features: Features;
 }
 
 interface SliderImage {
@@ -35,7 +44,18 @@ type Props = {
 
 const House = ({ content }: Props) => {
   const { house, sliderImage } = content;
-  const { specs, title, description, tags, about, image } = house;
+  const {
+    specs,
+    title,
+    description,
+    tags,
+    about_house,
+    about_kitchen,
+    after_kitchen,
+    about_bathroom,
+    image,
+    features,
+  } = house;
 
   return (
     <section className={styles.house__section} id={title}>
@@ -62,7 +82,90 @@ const House = ({ content }: Props) => {
           <div className={styles.house__description}>
             <div className={styles.house__description_about}>
               <div className={styles.house__description_content}>
-                {about.map((paragraph, index) => (
+                {about_house.map((paragraph, index) => (
+                  <p className={styles.house__description_text} key={index}>
+                    {paragraph}
+                  </p>
+                ))}
+                <div className={styles.house__description_features}>
+                  <div className={styles.column_even}>
+                    {features["house"].map(
+                      (feature, index) =>
+                        index % 2 === 0 && (
+                          <div key={index}>
+                            <div
+                              className={
+                                styles.house__description_features_item
+                              }
+                            >
+                              {feature}
+                            </div>
+                          </div>
+                        ),
+                    )}
+                  </div>
+                  <div className={styles.column_odd}>
+                    {features["house"].map(
+                      (feature, index) =>
+                        index % 2 !== 0 && (
+                          <div key={index}>
+                            <div
+                              className={
+                                styles.house__description_features_item
+                              }
+                            >
+                              {feature}
+                            </div>
+                          </div>
+                        ),
+                    )}
+                  </div>
+                </div>
+                {about_kitchen.map((paragraph, index) => (
+                  <p className={styles.house__description_text} key={index}>
+                    {paragraph}
+                  </p>
+                ))}
+                <div className={styles.house__description_features}>
+                  <div className={styles.column_even}>
+                    {features["kitchen"].map(
+                      (feature, index) =>
+                        index % 2 === 0 && (
+                          <div key={index}>
+                            <div
+                              className={
+                                styles.house__description_features_item
+                              }
+                            >
+                              {feature}
+                            </div>
+                          </div>
+                        ),
+                    )}
+                  </div>
+                  <div className={styles.column_odd}>
+                    {features["kitchen"].map(
+                      (feature, index) =>
+                        index % 2 !== 0 && (
+                          <div key={index}>
+                            <div
+                              className={
+                                styles.house__description_features_item
+                              }
+                            >
+                              {feature}
+                            </div>
+                          </div>
+                        ),
+                    )}
+                  </div>
+                </div>
+                {after_kitchen.map((paragraph, index) => (
+                  <p className={styles.house__description_text} key={index}>
+                    {paragraph}
+                  </p>
+                ))}
+                {about_bathroom.map((paragraph, index) => (
                   <p className={styles.house__description_text} key={index}>
                     {paragraph}
                   </p>

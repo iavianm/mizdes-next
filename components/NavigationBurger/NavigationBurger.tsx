@@ -54,6 +54,15 @@ const NavigationBurger = ({ navLinks, closeMenu, visible }: Props) => {
           <a className={styles.burger__link} href="mailto:mizdesclub@yandex.ru">
             mizdesclub@yandex.ru
           </a>
+          <a
+            className={
+              styles.burger__link + " " + styles.about__contacts_link_vk
+            }
+            href="https://vk.com/mizdesclub"
+            target="_blank"
+          >
+            МЫ ВКонтакте
+          </a>
         </div>
         <OrderButton buttonClass={"burger__button"} />
       </div>
