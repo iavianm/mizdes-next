@@ -25,6 +25,7 @@ const About = () => {
               styles.about__contacts_link + " " + styles.about__contacts_link_vk
             }
             href="https://vk.com/mizdesclub"
+            target="_blank"
           >
             МЫ ВКонтакте
           </a>

@@ -39,6 +39,18 @@ const Footer = () => {
                 <a href="tel:+79215567284">+7 921 556 72 84</a>
 
                 <a href="mailto:mizdesclub@yandex.ru">mizdesclub@yandex.ru</a>
+
+                <a
+                  className={
+                    styles.about__contacts_link +
+                    " " +
+                    styles.about__contacts_link_vk
+                  }
+                  href="https://vk.com/mizdesclub"
+                  target="_blank"
+                >
+                  МЫ ВКонтакте
+                </a>
               </div>
             </address>
           </div>
