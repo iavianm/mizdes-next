@@ -8,11 +8,13 @@
 }
 
 .header__logo {
-  width: 52px;
+  min-width: 52px;
   height: 52px;
   background: url("/images/header-logo.svg") no-repeat center;
   background-size: contain;
   margin-left: 10px;
+  z-index: 3;
+  display: inline-block;
 }
 
 .header__button {
@@ -30,9 +32,15 @@
 
 .header__button_container {
   display: flex;
-  gap: 20px;
+  /*gap: 20px;*/
   align-items: center;
   margin-right: 10px;
+}
+
+.header__logo_container {
+  max-width: 150px;
+  width: 100%;
+  position: relative;
 }
 
 .header__button_admin {
@@ -51,6 +59,10 @@
     border-radius: 0 0 10px 10px;
   }
 
+  .header__logo_container {
+    max-width: 60px;
+  }
+
   .header__logo {
     background-image: url("/images/header-logo-white.svg");
   }
@@ -67,6 +79,10 @@
   }
 
   .header__logo {
+    display: none;
+  }
+
+  .header__logo_container {
     display: none;
   }
 }
