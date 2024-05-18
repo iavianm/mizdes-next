@@ -2,7 +2,6 @@ import styles from "./House.module.css";
 import OrderButton from "@/components/OrderButton/OrderButton";
 import EmblaCarousel from "@/components/EmblaCarousel/EmblaCarousel";
 import Prices from "@/components/Prices/Prices";
-import BookingWidget from "@/components/BookingWidget/BookingWidget";
 
 interface Image {
   imageSrc: string;

@@ -51,12 +51,11 @@ const BookingWidget: React.FC = () => {
   }, [widgetKey]);
 
   return (
-    <div className={styles.order__button}>
-      <div
-        id={`_bn_widget_${widgetKey}`}
-        style={{ textAlign: "center", maxWidth: "130px" }}
-      ></div>
-    </div>
+    <div
+      className={styles.order__button}
+      id={`_bn_widget_${widgetKey}`}
+      style={{ textAlign: "center", maxWidth: "130px" }}
+    ></div>
   );
 };
 
