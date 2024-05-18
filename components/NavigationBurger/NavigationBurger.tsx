@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import styles from "./NavigationBurger.module.css";
 import { Button } from "antd";
 import OrderButton from "@/components/OrderButton/OrderButton";
+import BookingWidget from "@/components/BookingWidget/BookingWidget";
 
 type NavLink = {
   label: string;
@@ -64,7 +65,7 @@ const NavigationBurger = ({ navLinks, closeMenu, visible }: Props) => {
             МЫ ВКонтакте
           </a>
         </div>
-        <OrderButton buttonClass={"burger__button"} />
+        {/*<OrderButton buttonClass={"burger__button"} />*/}
       </div>
     </div>
   );
