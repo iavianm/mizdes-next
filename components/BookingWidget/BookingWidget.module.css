@@ -1,3 +1,5 @@
 .order__button {
   max-width: 150px;
+  min-width: 140px;
+  display: block;
 }
