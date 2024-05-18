@@ -2,6 +2,7 @@ import styles from "./House.module.css";
 import OrderButton from "@/components/OrderButton/OrderButton";
 import EmblaCarousel from "@/components/EmblaCarousel/EmblaCarousel";
 import Prices from "@/components/Prices/Prices";
+import BookingWidget from "@/components/BookingWidget/BookingWidget";
 
 interface Image {
   imageSrc: string;
@@ -172,7 +173,6 @@ const House = ({ content }: Props) => {
                 ))}
               </div>
               <div className={styles.house__order_place}>
-                <OrderButton />
                 <Prices title={title} />
               </div>
             </div>

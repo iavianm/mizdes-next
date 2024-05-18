@@ -11,6 +11,7 @@ import { loginWithCookie, logout } from "@/app/api/api";
 import { useRouter } from "next/navigation";
 import Preloader from "@/components/Preloader/Preloader";
 import { useAdminState } from "@/context/AdminStateContext";
+import BookingWidget from "@/components/BookingWidget/BookingWidget";
 
 function Header() {
   const router = useRouter();
@@ -58,10 +59,14 @@ function Header() {
 
   return (
     <header className={styles.header}>
-      <Link href="/" className={styles.header__logo} />
+      <div className={styles.header__logo_container}>
+        <Link href="/" className={styles.header__logo} />
+      </div>
+
       <Navigation navLinks={navItems} />
       <div className={styles.header__button_container}>
-        <OrderButton />
+        {/*<OrderButton />*/}
+        <BookingWidget />
         <div className={styles.header__button_admin}>
           {isAdmin && (
             <Link href="/admin">
