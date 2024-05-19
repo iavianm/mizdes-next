@@ -33,9 +33,11 @@
 .burger__btn_close {
   z-index: 99999;
   background-color: #cf8b25 !important;
-  position: fixed !important;
-  right: 20px;
-  top: 26px;
+  /*position: fixed !important;*/
+  right: 10px;
+  /*top: 26px;*/
+  height: 38px !important;
+  width: 38px !important;
 }
 
 .burger__btn {
