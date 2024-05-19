@@ -7,7 +7,7 @@
   top: 0;
   right: -100%;
   box-sizing: border-box;
-  padding: 80px 50px 80px !important;
+  padding: 120px 50px 80px !important;
   background-color: var(--blue-color);
   visibility: hidden;
   opacity: 0;

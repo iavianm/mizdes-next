@@ -78,11 +78,11 @@
     gap: 10px;
   }
 
-  .header__logo {
-    display: none;
-  }
+  /*.header__logo {*/
+  /*  display: none;*/
+  /*}*/
 
-  .header__logo_container {
-    display: none;
-  }
+  /*.header__logo_container {*/
+  /*  display: none;*/
+  /*}*/
 }
