@@ -82,18 +82,8 @@
     },
     {
       "id": 1700,
-      "src": "/images/riviera_slider/1.jpg",
+      "src": "/images/riviera_slider/IMG_7788.jpg",
       "alt": "Image 1700"
-    },
-    {
-      "id": 1800,
-      "src": "/images/riviera_slider/2.jpg",
-      "alt": "Image 1800"
-    },
-    {
-      "id": 1900,
-      "src": "/images/riviera_slider/3.jpg",
-      "alt": "Image 1900"
     }
   ],
   "grandis": [
@@ -184,33 +174,8 @@
     },
     {
       "id": 1700,
-      "src": "/images/grandis_slider/1.jpg",
+      "src": "/images/features_slider/IMG_7787.jpg",
       "alt": "Image 1700`"
-    },
-    {
-      "id": 1800,
-      "src": "/images/grandis_slider/2.jpg",
-      "alt": "Image 1800`"
-    },
-    {
-      "id": 1900,
-      "src": "/images/grandis_slider/3.jpg",
-      "alt": "Image 1900`"
-    },
-    {
-      "id": 2000,
-      "src": "/images/grandis_slider/4.jpg",
-      "alt": "Image 2000`"
-    },
-    {
-      "id": 2100,
-      "src": "/images/grandis_slider/5.jpg",
-      "alt": "Image 2100`"
-    },
-    {
-      "id": 2100,
-      "src": "/images/grandis_slider/6.jpg",
-      "alt": "Image 2100`"
     }
   ]
 }
