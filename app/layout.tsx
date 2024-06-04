@@ -9,6 +9,7 @@ import { AdminStateProvider } from "@/context/AdminStateContext";
 import YandexMetrika from "@/components/YandexMetrika/YandexMetrika";
 import PopupWithImage from "@/components/PopupWithImage/PopupWithImage";
 import VkPixel from "@/components/VkPixel/VkPixel";
+import Jivo from "@/components/Jivo/Jivo";
 
 const roboto = Roboto({
   subsets: ["cyrillic"],
@@ -30,6 +31,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
         <VkPixel />
         <AntdRegistry>{children}</AntdRegistry>
         <Footer />
+        <Jivo />
       </AdminStateProvider>
       {/*<PopupWithImage />*/}
     </body>
