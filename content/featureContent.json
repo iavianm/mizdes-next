@@ -1,6 +1,35 @@
 {
   "featureItems": [
     {
+      "id": 0,
+      "alt": "Вилла",
+      "src": [
+        {
+          "id": 1,
+          "src": "/images/features_slider/IMG_8727.jpg",
+          "alt": "Image 1"
+        },
+        {
+          "id": 100,
+          "src": "/images/features_slider/IMG_7787.jpg",
+          "alt": "Image 100"
+        },
+        {
+          "id": 200,
+          "src": "/images/features_slider/IMG_8728.jpg",
+          "alt": "Image 200"
+        },
+        {
+          "id": 300,
+          "src": "/images/features_slider/IMG_8729.jpg",
+          "alt": "Image 300"
+        }
+      ],
+      "label": "6 вилл",
+      "desc": "премиум-класса",
+      "about": ""
+    },
+    {
       "id": 1,
       "alt": "Территория",
       "src": [
@@ -33,35 +62,6 @@
       ],
       "label": "25 га",
       "desc": "территория",
-      "about": ""
-    },
-    {
-      "id": 2,
-      "alt": "Вилла",
-      "src": [
-        {
-          "id": 1,
-          "src": "/images/features_slider/_DSC9972.jpg",
-          "alt": "Image 1"
-        },
-        {
-          "id": 100,
-          "src": "/images/features_slider/IMG_7787.jpg",
-          "alt": "Image 100"
-        },
-        {
-          "id": 200,
-          "src": "/images/features_slider/_DSC0059.jpg",
-          "alt": "Image 200"
-        },
-        {
-          "id": 300,
-          "src": "/images/grandis_slider/4.jpg",
-          "alt": "Image 300"
-        }
-      ],
-      "label": "6 вилл",
-      "desc": "премиум-класса",
       "about": ""
     },
     {
