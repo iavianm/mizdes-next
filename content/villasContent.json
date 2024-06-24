@@ -1,7 +1,8 @@
 {
   "homePage": {
     "title": "Виллы премиум-класса",
-    "subtitle": "Когда экологичность и эстетика неразделимы"
+    "subtitle": "Когда экологичность и эстетика неразделимы",
+    "second_subtitle": "Варианты размещения:"
   },
   "villas": [
     {
@@ -10,7 +11,9 @@
       "NYPrice": "Новогодняя ночь - Цена: 25 тыс.",
       "rooms": "2 комнаты",
       "description": "Функциональная, современная, компактная вилла для небольшой компании",
-      "imageSrc": "/images/riviera_slider/_DSC9873.jpg"
+      "imageSrc": "/images/riviera_slider/_DSC9873.jpg",
+      "title": "2 + 1 чел.",
+      "subtitle": "1 спальня + 1 гостиная с кухней"
     },
     {
       "name": "Грандис",
@@ -18,7 +21,9 @@
       "NYPrice": "Новогодняя ночь - Цена: 40 тыс.",
       "rooms": "3 комнаты",
       "description": "Комфортная, стильная вилла для семейного отдыха",
-      "imageSrc": "/images/features_slider/IMG_8727.jpg"
+      "imageSrc": "/images/features_slider/IMG_8727.jpg",
+      "title": "4 + 1 чел.",
+      "subtitle": "2 спальни + 1 гостиная с кухней"
     }
   ]
 }
