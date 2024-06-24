@@ -22,6 +22,21 @@
   border-radius: 8px;
 }
 
+.villa__image_title {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  text-align: right;
+}
+
+.villa__image_title h3 {
+  color: white !important;
+}
+
+.villa__image_title p {
+  color: white !important;
+}
+
 .villa__info {
   padding: 16px;
 }

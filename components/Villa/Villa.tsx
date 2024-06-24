@@ -10,6 +10,8 @@ type VillaContent = {
   NYPrice: string;
   description: string;
   imageSrc: string;
+  title: string;
+  subtitle: string;
 };
 
 type Props = {
@@ -17,7 +19,8 @@ type Props = {
 };
 
 const Villa = ({ content }: Props) => {
-  const { name, area, rooms, NYPrice, description, imageSrc } = content;
+  const { name, area, rooms, NYPrice, description, imageSrc, subtitle, title } =
+    content;
 
   return (
     <div className={styles.villa__card}>
@@ -28,6 +31,10 @@ const Villa = ({ content }: Props) => {
             alt={name}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
+          <div className={styles.villa__image_title}>
+            <h3>{title}</h3>
+            <p>{subtitle}</p>
+          </div>
         </div>
         <div className={styles.villa__info}>
           <div className={styles.villa__about_container}>

@@ -35,13 +35,12 @@
       "src": [
         {
           "id": 1,
-          "src": "/images/features_slider/_DSC0008.jpg",
+          "src": "/images/features_slider/_DSC0153.jpg",
           "alt": "Image 1"
         },
         {
           "id": 100,
-
-          "src": "/images/features_slider/_DSC0153.jpg",
+          "src": "/images/features_slider/_DSC0008.jpg",
           "alt": "Image 100"
         },
         {
@@ -53,15 +52,10 @@
           "id": 300,
           "src": "/images/features_slider/_DSC0145.jpg",
           "alt": "Image 300"
-        },
-        {
-          "id": 400,
-          "src": "/images/features_slider/features_slider_1.jpg",
-          "alt": "Image 400"
         }
       ],
-      "label": "25 га",
-      "desc": "территория",
+      "label": "Лес и пляж",
+      "desc": "",
       "about": ""
     },
     {

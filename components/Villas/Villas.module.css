@@ -16,6 +16,13 @@
   font-size: 20px;
 }
 
+.villas__section h3 {
+  color: #000;
+  margin: 20px 0;
+  font-size: 28px;
+  font-weight: normal;
+}
+
 .villas__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

@@ -7,6 +7,7 @@ const Villas = () => {
     <section className={styles.villas__section}>
       <h2>{homePage.title}</h2>
       <p>{homePage.subtitle}</p>
+      <h3>{homePage.second_subtitle}</h3>
       <div className={styles.villas__grid}>
         {villas.map((villa, index) => (
           <Villa key={index} content={villa} />
