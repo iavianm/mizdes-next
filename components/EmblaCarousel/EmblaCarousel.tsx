@@ -99,6 +99,20 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   className={styles.embla__slide__img}
                   onClick={() => openModal(index)}
                 />
+                {slide.description && (
+                  <div className={styles.embla__slide__description}>
+                    {slide.description}
+                    {slide.items &&
+                      slide.items.map((item, i) => (
+                        <p
+                          className={styles.embla__slide__description_item}
+                          key={i}
+                        >
+                          {item}
+                        </p>
+                      ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>

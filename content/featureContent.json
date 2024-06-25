@@ -23,6 +23,11 @@
           "id": 300,
           "src": "/images/features_slider/IMG_8729.jpg",
           "alt": "Image 300"
+        },
+        {
+          "id": 400,
+          "src": "/images/features_slider/IMG_8941.jpg",
+          "alt": "Image 400"
         }
       ],
       "label": "6 вилл",
@@ -52,6 +57,16 @@
           "id": 300,
           "src": "/images/features_slider/_DSC0145.jpg",
           "alt": "Image 300"
+        },
+        {
+          "id": 400,
+          "src": "/images/features_slider/IMG_8951.jpg",
+          "alt": "Image 400"
+        },
+        {
+          "id": 500,
+          "src": "/images/features_slider/IMG_8957.jpg",
+          "alt": "Image 500"
         }
       ],
       "label": "Лес и пляж",
@@ -103,12 +118,12 @@
         },
         {
           "id": 200,
-          "src": "/images/bath_tub_slider/_DSC0022.jpg",
+          "src": "/images/bath_tub_slider/IMG_8937.jpg",
           "alt": "Image 200"
         },
         {
           "id": 300,
-          "src": "/images/bath_tub_slider/3.jpg",
+          "src": "/images/bath_tub_slider/IMG_8945.jpg",
           "alt": "Image 300"
         }
       ],
