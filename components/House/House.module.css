@@ -160,6 +160,7 @@
 .house__description_image {
   /*max-width: 40%;*/
   flex: 1;
+  position: relative;
 }
 
 .house__description_image img {

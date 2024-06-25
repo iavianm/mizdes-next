@@ -31,6 +31,7 @@ interface SliderImage {
   id: number;
   src: string;
   alt: string;
+  description: string;
 }
 
 type HouseContent = {
