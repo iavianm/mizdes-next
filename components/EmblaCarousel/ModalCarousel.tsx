@@ -14,8 +14,9 @@ export type ModalCarouselProps = {
 
 export type Slide = {
   src: string;
-  description: string;
-  items: Array<string>;
+  alt: string;
+  description?: string;
+  items?: string[];
 };
 
 const ModalCarousel = ({ slides, initialSlide }: ModalCarouselProps) => {
