@@ -107,16 +107,6 @@
       "alt": "СПА услуги",
       "src": [
         {
-          "id": 1,
-          "src": "/images/bath_tub_slider/_DSC9908.jpg",
-          "alt": "Image 1"
-        },
-        {
-          "id": 100,
-          "src": "/images/bath_tub_slider/_DSC0017.jpg",
-          "alt": "Image 100"
-        },
-        {
           "id": 200,
           "src": "/images/bath_tub_slider/IMG_8937.jpg",
           "alt": "Image 200"
