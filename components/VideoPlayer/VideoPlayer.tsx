@@ -6,13 +6,15 @@ interface VideoPlayerProps {
   autoplay?: boolean;
   loop?: boolean;
   controls?: boolean;
+  muted?: boolean;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   src,
-  autoplay = false,
+  autoplay = true,
   loop = false,
   controls = true,
+  muted = true,
 }) => {
   return (
     <div className={styles.videoContainer}>
@@ -22,7 +24,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         autoPlay={autoplay}
         loop={loop}
         controls={controls}
-        muted={autoplay}
+        muted={muted || autoplay}
         playsInline
       >
         Ваш браузер не поддерживает видео тег.

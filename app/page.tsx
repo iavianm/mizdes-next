@@ -15,6 +15,7 @@ const Home = () => {
         autoplay={true}
         loop={true}
         controls={true}
+        muted={true}
       />
       <Features />
       <Villas />
