@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin
-Disallow: /signin
-Sitemap: https://mizdes.com/sitemap.xml
-Sitemap: https://www.mizdes.com/sitemap.xml
