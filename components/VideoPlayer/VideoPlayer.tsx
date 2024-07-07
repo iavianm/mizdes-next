@@ -8,6 +8,7 @@ interface VideoPlayerProps {
   loop?: boolean;
   controls?: boolean;
   muted?: boolean;
+  poster?: string;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
@@ -16,11 +17,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   loop = true,
   controls = true,
   muted = true,
+  poster,
 }) => {
   const videoId = "uniqueVideoId";
 
   const videoHtml = `
     <video
+      poster="${poster}"
       id="${videoId}"
       class="${styles.video}" 
       src="${src}"

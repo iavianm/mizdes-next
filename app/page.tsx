@@ -11,7 +11,8 @@ const Home = () => {
     <main className={styles.main}>
       <Intro content={introContent.homePage} />
       <VideoPlayer
-        src="/video/mizdes_video_1.mp4"
+        src="/videos/mizdes_video_1.mp4"
+        poster={"/videos/poster_mizdes_video_1.png"}
         autoplay={true}
         loop={true}
         controls={true}
