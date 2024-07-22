@@ -241,6 +241,21 @@
       "id": 1700,
       "src": "/images/features_slider/IMG_7787.jpg",
       "alt": "Image 1700`"
+    },
+    {
+      "id": 1800,
+      "src": "/images/grandis_slider/IMG_1654.jpg",
+      "alt": "Image 1700`"
+    },
+    {
+      "id": 1900,
+      "src": "/images/grandis_slider/IMG_1676.jpg",
+      "alt": "Image 1700`"
+    },
+    {
+      "id": 2000,
+      "src": "/images/grandis_slider/IMG_4272.jpg",
+      "alt": "Image 1700`"
     }
   ]
 }
