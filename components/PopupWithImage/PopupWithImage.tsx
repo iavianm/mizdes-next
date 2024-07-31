@@ -11,7 +11,7 @@ const PopupWithImage: React.FC = () => {
     setVisible(true);
     const timer = setTimeout(() => {
       setVisible(false);
-    }, 10000);
+    }, 30000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -47,13 +47,15 @@ const PopupWithImage: React.FC = () => {
       width="auto"
       centered
     >
-      <Image
-        src="/images/valentines-day.png"
-        alt="Valentine's Day"
-        layout="responsive"
-        width={500}
-        height={500}
-      />
+      <div style={{ borderRadius: "5px", overflow: "hidden" }}>
+        <Image
+          src="/images/promo.jpg"
+          alt="Promo"
+          layout="responsive"
+          width={500}
+          height={500}
+        />
+      </div>
       <style jsx global>{`
         @media (max-width: 600px) {
           .ant-modal {

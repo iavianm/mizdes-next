@@ -33,7 +33,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
         <Footer />
         <Jivo />
       </AdminStateProvider>
-      {/*<PopupWithImage />*/}
+      <PopupWithImage />
     </body>
   </html>
 );
